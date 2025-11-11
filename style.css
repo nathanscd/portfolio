@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 @font-face {
   font-family: 'btn-font';
   src: url('Fonts/AC-Atomic.ttf') format('truetype');
@@ -9,7 +13,6 @@ body{
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
-  overflow: hidden;
 }
 
 header{
@@ -80,10 +83,46 @@ a{
   transition: all 1s ease;
 }
 
-a:hover{
-  color: rgb(255, 255, 255);
-  text-shadow: 0 0 15px #e22d2d85, 0 0 30px #e22d2d53, 0 0 45px #e22d2d94;
+.hover-flip {
+  color:rgb(255, 255, 255);
+  font-family: "btn-font", sans-serif;
+  text-decoration: none;
+  font-size: 4vw;
+
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  perspective: 1000px;
 }
+
+.hover-flip::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 110%;
+  left: 0;
+  width: 100%;
+  color: #ff002f;
+  transform: rotateX(-90deg);
+  transform-origin: top;
+  transition: all 0.4s ease;
+}
+
+.hover-flip span,
+.hover-flip {
+  display: inline-block;
+  transition: all 0.4s ease;
+  transform-origin: bottom;
+}
+
+.hover-flip:hover {
+  color: transparent;
+}
+
+.hover-flip:hover::before {
+  top: -1px;
+  transform: rotateX(0deg);
+}
+
 
 #close{
   position: relative;
@@ -102,7 +141,7 @@ a:hover{
   background-color: white;
 }
 
-#main{
+#main, #dev, #photo, #design{
   display: flex;
   margin: 0 10px;
   flex-direction: column;
