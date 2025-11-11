@@ -1,5 +1,5 @@
 body{
-  background-color: rgb(244, 241, 241);
+  background-color: white;
   color: black;
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
@@ -24,19 +24,16 @@ header{
 }
 
 #menu{
-  height: 3vh;
-  background-color: white;
-  color: black;
-  border: none;
+  height: 3.5vh;
   cursor:pointer;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
   transition: all 0.2s ease-in-out;
-  margin: 10px 15px;
+  margin: 10px 20px;
+  opacity: 0.7;
 }
 
-.menu:hover{
+#menu:hover{
   scale: 1.1;
+  opacity: 1;
 }
 
 .logo{
@@ -53,7 +50,7 @@ header{
   padding: 0 25px;
   justify-content: center;
   align-items: baseline;
-  background-color: rgba(0, 0, 0, 0.612);
+  background-color: rgba(0, 0, 0, 0.850);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   gap: 50px;
@@ -84,9 +81,11 @@ a:hover{
 
 #main{
   display: flex;
+  margin: 0 10px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: red;
   height: 100dvh;
+  border-radius: 10px;
 }
