@@ -1,18 +1,39 @@
+import { useState } from "react";
+
 type Props = {
-setSection: (value: "home" | "about" | "projects" | "contact") => void;
+  setSection: (value: "home" | "about" | "projects" | "contact") => void;
 };
 
+function Navbar({ setSection }: Props) {
+const [open, setOpen] = useState(false);
 
-export default function Header({ setSection }: Props) {
 return (
-<header className="fixed top-0 left-0 w-full flex justify-between items-center px-8 py-4 z-50 bg-black/40 backdrop-blur-md">
-<nav id="navbar" className="flex gap-6 text-sm uppercase">
-  <div id="nav-logo" className="text-2xl font-bold tracking-tight">Nathanael Secundo Cardoso</div>
-  <button onClick={() => setSection("home")}>Home</button>
-  <button onClick={() => setSection("about")}>Sobre</button>
-  <button onClick={() => setSection("projects")}>Projetos</button>
-  <button onClick={() => setSection("contact")}>Contato</button>
+<nav className="navbar">
+  <button
+    className="hamburger"
+    onClick={() => setOpen(!open)}
+    aria-label="Menu"
+  >
+    <div className={open ? "bar bar1-open" : "bar"} />
+    <div className={open ? "bar bar2-open" : "bar"} />
+    <div className={open ? "bar bar3-open" : "bar"} />
+  </button>
+
+  <div className={open ? "nav-links-mobile open" : "nav-links-mobile"}>
+    <button className="close" onClick={() => setOpen(!open)}>
+      <span className="t1">Close</span>
+      <span className="t2">Close</span>
+    </button>
+
+    <button onClick={() => setSection("home")} className="btn">Home</button>
+    <a href="#about" onClick={() => {
+                                    setSection("about"); 
+                                    setOpen(false);}} 
+                                    className="btn">Sobre</a>
+    <a href="#projects" onClick={() => setSection("projects")} className="btn">Projetos</a>
+    <a href="#contact" onClick={() => setSection("contact")} className="btn">Contato</a>
+  </div>
 </nav>
-</header>
 );
 }
+export default Navbar;
