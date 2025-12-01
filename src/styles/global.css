@@ -110,6 +110,24 @@ section {
   transform: translateY(-4px);
 }
 
+#input{
+  background: var(--bg-alt);
+  padding: 24px;
+  border-radius: var(--radius);
+  border: 1px solid #1b1b1b;
+  transition: var(--transition);
+}
+
+
+#input:hover{
+  border-color: var(--accent);
+  transform: translateY(-4px);
+}
+
+#input:focus{
+  border-color: var(--accent);
+}
+
 form input,
 .contact-form textarea {
   width: 100%;
@@ -124,7 +142,7 @@ form input,
 
 form input:focus,
 form textarea:focus {
-  border-color: var(--accent);
+  border-color: red;
   outline: none;
 }
 
