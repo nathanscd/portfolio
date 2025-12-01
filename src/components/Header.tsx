@@ -10,8 +10,9 @@ export default function Navbar({ setSection }: Props) {
   return (
     <>
       <nav className="navbar">
-        <button onClick={() => setOpen(true)} className="menu">
-          Menu
+        <button className="close" onClick={() => setOpen(true)}>
+          <span className="t1">MENU</span>
+          <span className="t2">MENU</span>
         </button>
       </nav>
 
@@ -21,10 +22,14 @@ export default function Navbar({ setSection }: Props) {
       ></div>
 
       <div className={open ? "nav-links-mobile open" : "nav-links-mobile"}>
-        <button className="close" onClick={() => setOpen(false)}>
-          <span className="t1">Close</span>
-          <span className="t2">Close</span>
-        </button>
+        <div className="upp">
+          <span>O que quer ver primeiro?</span>
+          <button className="close" onClick={() => setOpen(false)}>
+            <span className="t1">FECHAR</span>
+            <span className="t2">FECHAR</span>
+          </button>
+        </div>
+        
 
         <button
           onClick={() => {
@@ -33,7 +38,7 @@ export default function Navbar({ setSection }: Props) {
           }}
           className="btn"
         >
-          Home
+          HOME
         </button>
 
         <a
@@ -44,7 +49,7 @@ export default function Navbar({ setSection }: Props) {
             setOpen(false);
           }}
         >
-          Sobre
+          SOBRE
         </a>
 
         <a
@@ -55,7 +60,7 @@ export default function Navbar({ setSection }: Props) {
             setOpen(false);
           }}
         >
-          Projetos
+          PROJETOS
         </a>
 
         <a
@@ -66,7 +71,7 @@ export default function Navbar({ setSection }: Props) {
             setOpen(false);
           }}
         >
-          Contato
+          CONTATO
         </a>
       </div>
     </>
