@@ -128,12 +128,16 @@ body {
   background: #e6e6e6;
   clip-path: polygon(8% 0%,100% 0%,100% 0%,92% 100%,0% 100%,0% 100%);
   z-index: -1;
-  transition: clip-path 0.5s ease;
+  transition:  all 0.5s ease;
 }
 
 .close:hover::before{
   border: 0.1px solid rgba(255, 0, 0, 0.383);
   clip-path: polygon(0% 0%,100% 0%,100% 0%,100% 100%,0% 100%,0% 100%);
+}
+
+.close:active::before{
+  scale: 0.5;
 }
 
 .close span {
@@ -327,7 +331,7 @@ section {
   border: none;
   color: white;
   cursor: pointer;
-  font-size: 3.2vw;
+  font-size: 2.5vw;
   padding: 10px;
   margin: 10px; 
   margin-left: 0;
