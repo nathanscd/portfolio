@@ -118,6 +118,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 5px;
 }
 
 .close::before {
@@ -127,6 +128,12 @@ body {
   background: #e6e6e6;
   clip-path: polygon(8% 0%,100% 0%,100% 0%,92% 100%,0% 100%,0% 100%);
   z-index: -1;
+  transition: clip-path 0.5s ease;
+}
+
+.close:hover::before{
+  border: 0.1px solid rgba(255, 0, 0, 0.383);
+  clip-path: polygon(0% 0%,100% 0%,100% 0%,100% 100%,0% 100%,0% 100%);
 }
 
 .close span {
