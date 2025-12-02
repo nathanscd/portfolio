@@ -28,7 +28,7 @@ placeholder="Mensagem"
 className="p-3 rounded-lg bg-neutral-900 h-32"
 id="input"
 />
-<button className="bg-red-600 py-3 rounded-lg">Enviar</button>
+<button className="send">Enviar</button>
 </form>
 </motion.section>
 );

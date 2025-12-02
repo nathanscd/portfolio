@@ -61,6 +61,7 @@
   gap: 15px;
   opacity: 0;
   transition: all 1.5s ease;
+  border-left: solid 0.1px rgba(255, 255, 255, 0.075);
   z-index: 2000;
 }
 
@@ -163,7 +164,7 @@
   left: 50%;
   transform: translateX(-50%);
   white-space: nowrap;
-  transition: transform 0.4s cubic-bezier(0.25, 0.6, 0.3, 1), opacity 0.35s ease; 
+  transition: transform 0.5s cubic-bezier(0.25, 0.6, 0.3, 1), opacity 0.25s ease; 
 }
 
 .close .t1 {
@@ -172,13 +173,13 @@
 }
 
 .close .t2 {
-  transform: translate(-50%, 100%);
+  transform: translate(-50%, 150%);
   opacity: 0;
 }
 
 .close:hover .t1 {
-  transform: translate(-50%, -100%);
-  opacity: 0;
+  transform: translate(-50%, -150%);
+  opacity: 0.3;
 }
 
 .close:hover .t2 {
@@ -365,5 +366,9 @@ form textarea:focus {
   }
   .section-title {
     font-size: 2rem;
+  }
+
+  .nav-links-mobile{
+    width: 100%;
   }
 }
