@@ -10,7 +10,7 @@ export default function LanguageSwitcher({ className }: LanguageSwitcherProps) {
   const nextLangText = {
     "pt": "PT",
     "en": "EN",
-    "spn": "SPN"
+    "spn": "ES"
   };
 
   return (
