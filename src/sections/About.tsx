@@ -20,6 +20,7 @@ export default function About() {
         <div className="abt-div">
           <h1 className="abt fade-in">{t.abt}</h1>
           <p className="abt-text fade-in">{t.abtText}</p>
+          <div className="tech-box"> <h3 className="tech-title">Tecnologias</h3> <div className="tech-list"> <span>HTML</span> <span>CSS</span> <span>JavaScript</span> <span>TypeScript</span> <span>React</span> <span>React Native</span> <span>Node.js</span> <span>Python</span> <span>SQL</span> <span>Figma</span> <span>Git</span> </div> </div>
         </div>
       </div>
     </div>

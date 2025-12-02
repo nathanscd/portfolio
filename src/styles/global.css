@@ -77,7 +77,7 @@ body {
   display: flex;
   flex-direction: column;
   padding: 100px 30px;
-  gap: 15px;
+  gap: 1vh;
   opacity: 0;
   transition: all 1.5s ease;
   border-left: solid 0.1px rgba(255,255,255,0.075);
@@ -107,8 +107,8 @@ body {
 
 .close {
   position: relative;
-  width: 170px;
-  height: 55px;
+  width: clamp(50px,150px,170vw);
+  height: 7vh;
   font-weight: 500;
   margin-left: auto;
   cursor: pointer;
@@ -166,7 +166,7 @@ body {
   border: none;
   color: white;
   cursor: pointer;
-  font-size: 3.2vw;
+  font-size: clamp(40px, 60px, 100px);
   padding: 10px;
   margin: 10px;
   border-radius: 10px;
@@ -303,15 +303,6 @@ section {
   100% { transform: translateX(-60px) rotate(2deg); }
 }
 
-@media (max-width: 768px) {
-  .name-main { font-size: 8vw; }
-  .titles { font-size: 4vw; }
-  .desc { font-size: 3.5vw; }
-  .btn { font-size: 6vw; }
-  .close span { font-size: 3.5vw; }
-  .nav-links-mobile { width: 100%; }
-}
-
 .background-racing,
 .racing-red1,
 .racing-red2 {
@@ -331,7 +322,7 @@ section {
   border: none;
   color: white;
   cursor: pointer;
-  font-size: 2.5vw;
+  font-size: clamp(20px, 30px, 100px);
   padding: 10px;
   margin: 10px; 
   margin-left: 0;
@@ -410,13 +401,15 @@ section {
   display: flex;
   flex-direction: column;
   max-width: 15vw;
+  height: fit-content;
   align-items: center;
   justify-content: center;
   gap: 2vh;
-  background: linear-gradient(to bottom, white, rgb(110, 38, 38));
-  padding: 50px 30px;
-  border-radius: 30px;
+  background: linear-gradient(to bottom, rgb(251, 216, 216), rgb(110, 38, 38));
+  padding: 70px 20px;
+  border-radius: 1vw;
   border: solid 0.1px rgba(86, 17, 17, 0.256);
+  border-bottom: none;
   transition: all 0.6s ease;
 }
 
@@ -431,8 +424,8 @@ section {
 }
 
 .profile > img{
-  width: 10vw;
-  border-radius: 10px;
+  width: 12vw;
+  border-radius: 1vw;
 }
 
 .profile:hover{
@@ -449,4 +442,70 @@ section {
   background: linear-gradient(to bottom, white, rgb(110, 38, 38));
   color: white;
   border: solid 0.1px rgba(86, 17, 17, 0.256);
+}
+
+.tech-box {
+  margin-top: 4vh;
+  padding: 20px;
+  border-radius: 15px;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.05), rgba(255, 0, 0, 0.1));
+  border: solid 0.1px rgba(255, 255, 255, 0.12);
+  animation: fade-in 0.8s ease-out forwards;
+}
+
+.tech-title {
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.4vw;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.tech-list span {
+  font-family: "Rajdhani", sans-serif;
+  font-size: 1vw;
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 8px;
+  border: solid 0.1px rgba(255, 0, 0, 0.25);
+  transition: 0.3s ease;
+}
+
+.tech-list span:hover {
+  background: rgba(255, 0, 0, 0.2);
+  transform: translateY(-2px);
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .nav-links-mobile { width: 100%; }
+
+  .name-main { font-size: 10vw; }
+  .titles { font-size: 5vw; }
+  .desc { font-size: 4vw; }
+
+  .close span { font-size: 4vw; }
+
+  .abt { font-size: 6vw; }
+  .abt-text { font-size: 4vw; }
+  .abt-div{max-width: 80vw;}
+
+  .profile {
+  margin-top: 30px;
+  max-width: 80vw;
+  width: 80vw;
+  padding: 35px 20px;
+  }
+
+  .profile > img { width: 70vw; }
+  .profile > h1 { font-size: 5vw; }
+  .profile > h2 { font-size: 4vw; }
+
+  .tech-title { font-size: 5vw; }
+  .tech-list span { font-size: 4vw; }
 }
