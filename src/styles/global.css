@@ -405,6 +405,8 @@ section {
   background: linear-gradient(to bottom, white, rgb(110, 38, 38));
   padding: 50px 30px;
   border-radius: 30px;
+  border: solid 0.1px rgba(86, 17, 17, 0.256);
+  transition: all 0.6s ease;
 }
 
 .profile > h1{
@@ -425,9 +427,15 @@ section {
 .profile:hover{
   scale: 1.1;
   rotate: 2deg;
+  color: #E4032E;
+  background: linear-gradient(to bottom, black, rgb(54, 12, 12));
+  border: solid 0.1px rgba(255, 255, 255, 0.256);
 }
 
 .profile:active{
   scale: 0.8;
   rotate: -2deg;
+  background: linear-gradient(to bottom, white, rgb(110, 38, 38));
+  color: white;
+  border: solid 0.1px rgba(86, 17, 17, 0.256);
 }
