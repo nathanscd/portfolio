@@ -1,4 +1,5 @@
 import { useState } from "react";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 type Props = {
   setSection: (value: "home" | "about" | "projects" | "contact") => void;
@@ -10,6 +11,7 @@ export default function Navbar({ setSection }: Props) {
   return (
     <>
       <nav className="navbar">
+        <LanguageSwitcher className="lang-switch" />
         <button className="close" onClick={() => setOpen(true)}>
           <span className="t1">MENU</span>
           <span className="t2">MENU</span>

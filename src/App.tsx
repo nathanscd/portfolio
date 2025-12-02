@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { LangProvider } from "./context/LangContext"; 
 import Header from "./components/Header";
 import Home from "./sections/Home";
 import About from "./sections/About";
@@ -10,20 +11,22 @@ type Section = "home" | "about" | "projects" | "contact";
 
 
 export default function App() {
-const [section, setSection] = useState<Section>("home");
+  const [section, setSection] = useState<Section>("home");
 
 
-return (
-<div className="min-h-screen w-full bg-black text-white font-sans">
-<Header setSection={setSection} />
+  return (
+    <LangProvider>
+      <div className="min-h-screen w-full bg-black text-white font-sans">
+        <Header setSection={setSection} /> 
 
 
-<main className="pt-32">
-{section === "home" && <Home />}
-{section === "about" && <About />}
-{section === "projects" && <Projects />}
-{section === "contact" && <Contact />}
-</main>
-</div>
-);
+        <main className="pt-32">
+          {section === "home" && <Home />}
+          {section === "about" && <About />}
+          {section === "projects" && <Projects />}
+          {section === "contact" && <Contact />}
+        </main>
+      </div>
+    </LangProvider>
+  );
 }
