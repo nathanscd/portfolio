@@ -1,18 +1,30 @@
 import { motion } from "framer-motion";
+import { useLang } from "../context/LangContext"; 
 
 
 export default function About() {
-return (
-<motion.section
-initial={{ opacity: 0, y: 20 }}
-animate={{ opacity: 1, y: 0 }}
-className="max-w-3xl mx-auto px-6"
-id="card"
->
-<h2 className="text-3xl font-bold mb-4">Sobre mim</h2>
-<p className="opacity-80 leading-relaxed">
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam soluta ea tenetur, nam deserunt pariatur repellat, impedit tempora corporis nihil ullam beatae fuga eum nostrum quis in iusto veritatis eos.
-</p>
-</motion.section>
-);
+  const { t } = useLang(); 
+  return (
+  <motion.section
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  className="max-w-3xl mx-auto px-6"
+  >
+    <div className="hero-abt">
+      <div className="profile">
+        <img src="src/static/PFP.jpeg" />
+        <h1>Nathanael Secundo Cardoso</h1>
+        <h2>Desenvolvedor | Designer | Analista de Dados</h2>
+      </div>
+      <div>
+        <div className="abt-div">
+          <h1 className="abt fade-in">{t.abt}</h1>
+          <p className="abt-text fade-in">{t.abtText}</p>
+        </div>
+      </div>
+    </div>
+   
+
+  </motion.section>
+  );
 }

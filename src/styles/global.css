@@ -12,6 +12,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: all 0.5s ease;
 }
 
 body {
@@ -106,9 +107,9 @@ body {
 
 .close {
   position: relative;
-  width: 150px;
-  height: 50px;
-  font-weight: bolder;
+  width: 170px;
+  height: 55px;
+  font-weight: 500;
   margin-left: auto;
   cursor: pointer;
   overflow: hidden;
@@ -355,4 +356,78 @@ section {
 .lang-switch:active {
   color: white;
   transform: scale(0.8);
+}
+
+@keyframes fade-in{
+  from{
+    opacity: 0;
+    transform: translateX(-5px);
+  }
+  to{
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.abt{
+  font-size: 2vw;
+  font-family: "Orbitron", sans-serif;
+  background: linear-gradient(to left, black, #e4030361);
+  padding: 5px 10px;
+  animation: fade-in 0.8s ease-out forwards;
+}
+
+.abt-text{
+  font-size: 1.1vw;
+  text-align: justify;
+  margin-top: 5px;
+  animation: fade-in 0.8s ease-out forwards;
+}
+
+.hero-abt{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 5vw;
+}
+
+.abt-div{
+  max-width: 60vw;
+}
+
+.profile{
+  display: flex;
+  flex-direction: column;
+  max-width: 15vw;
+  align-items: center;
+  justify-content: center;
+  gap: 2vh;
+  background: linear-gradient(to bottom, white, rgb(110, 38, 38));
+  padding: 50px 30px;
+  border-radius: 30px;
+}
+
+.profile > h1{
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.2vw;
+}
+
+.profile > h2{
+  font-family: "Orbitron", sans-serif;
+  font-size:0.8vw
+}
+
+.profile > img{
+  width: 10vw;
+  border-radius: 10px;
+}
+
+.profile:hover{
+  scale: 1.1;
+  rotate: 2deg;
+}
+
+.profile:active{
+  scale: 0.8;
+  rotate: -2deg;
 }
