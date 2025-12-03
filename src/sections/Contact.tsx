@@ -21,16 +21,16 @@ export default function Home() {
         <h2>Contato</h2>
         <p>Me chame para fecharmos um negócio</p>
         <div className="container-social">
-          <a href="https://github.com/seuUsuario" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/nathanscd" target="_blank" rel="noopener noreferrer">
             <img src="src/static/github_icon.png" alt="GitHub" />
           </a>
 
-          <a href="https://www.linkedin.com/in/seuUsuario/" target="_blank" rel="noopener noreferrer">
-            <img src="src/static/Instagram_icon.png" alt="LinkedIn" />
+          <a href="https://www.linkedin.com/in/nathanscd/" target="_blank" rel="noopener noreferrer">
+            <img src="src/static/LinkedIn_icon.png" alt="LinkedIn" />
           </a>
 
-          <a href="https://instagram.com/seuUsuario" target="_blank" rel="noopener noreferrer">
-            <img src="src/static/LinkedIn_icon.png" alt="Instagram" />
+          <a href="https://instagram.com/nathansscd" target="_blank" rel="noopener noreferrer">
+            <img src="src/static/Instagram_icon.png" alt="Instagram" />
           </a>
         </div>
         

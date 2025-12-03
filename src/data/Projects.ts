@@ -15,7 +15,7 @@ export type Project = {
 export const projects: Project[] = [
   {
     id: 1,
-    title: "GradeTracker",
+    title: "Grade Tracker",
     image: "src/static/GradeTracker.png",
     tech: ["React", "TypeScript"],
     description: "Sistema para acompanhar e calcular notas acadêmicas de forma simples, prática e visual.",
@@ -43,7 +43,7 @@ export const projects: Project[] = [
 
   {
     id: 3,
-    title: "UltimateComparison",
+    title: "Ultimate Comparison",
     image: "src/static/UltimateComparison.png",
     tech: ["Python"],
     description: "Ferramenta para comparação detalhada de produtos, serviços ou dados, permitindo análises rápidas e visuais.",
@@ -56,7 +56,7 @@ export const projects: Project[] = [
   },
   {
     id: 4,
-    title: "FinanceTracker",
+    title: "Finance Tracker",
     image: "src/static/UltimateComparison.png",
     tech: ["React", "CSS", "HTML", "TypeScript"],
     description: "Ferramenta para comparação detalhada de produtos, serviços ou dados, permitindo análises rápidas e visuais.",
