@@ -15,6 +15,7 @@ export default function About() {
         <img src="src/static/PFP.jpeg" />
         <h1>Nathanael Secundo Cardoso</h1>
         <h2>Desenvolvedor | Designer | Analista de Dados</h2>
+        <h2>Localidade: Fortaleza, CE - BR</h2>
       </div>
       <div>
         <div className="abt-div">

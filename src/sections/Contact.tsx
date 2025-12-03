@@ -1,35 +1,40 @@
 import { motion } from "framer-motion";
+import { useLang } from "../context/LangContext"; 
+import { div } from "framer-motion/client";
 
+export default function Home() {
+  const { t } = useLang(); 
 
-export default function Contact() {
-return (
-<motion.section
-initial={{ opacity: 0, y: 20 }}
-animate={{ opacity: 1, y: 0 }}
-className="max-w-lg mx-auto px-10"
-id="card"
->
-<h2 className="text-3xl font-bold mb-4">Entre em contato</h2>
-<form className="flex flex-col gap-5">
-<input
-type="text"
-placeholder="Seu nome"
-className="p-3 rounded-lg bg-neutral-900"
-id="input"
-/>
-<input
-type="email"
-placeholder="Seu email"
-className="p-3 rounded-lg bg-neutral-900"
-id="input"
-/>
-<textarea
-placeholder="Mensagem"
-className="p-3 rounded-lg bg-neutral-900 h-32"
-id="input"
-/>
-<button className="send">Enviar</button>
-</form>
-</motion.section>
-);
-} 
+  return (
+    <div className="contact">
+      <div className="background-racing">
+        <div className="racing-red1">
+          <div className="racing-red-inner"></div>
+        </div>
+        <div className="racing-red2"></div>
+        <div className="red-glow"></div>
+      </div>
+
+      <div className="card-contact">
+        <img src="src/static/PFP.jpeg" className="card-img" />
+        <h1>NATHANAEL SECUNDO CARDOSO</h1>
+        <h2>Contato</h2>
+        <p>Me chame para fecharmos um negócio</p>
+        <div className="container-social">
+          <a href="https://github.com/seuUsuario" target="_blank" rel="noopener noreferrer">
+            <img src="src/static/github_icon.png" alt="GitHub" />
+          </a>
+
+          <a href="https://www.linkedin.com/in/seuUsuario/" target="_blank" rel="noopener noreferrer">
+            <img src="src/static/Instagram_icon.png" alt="LinkedIn" />
+          </a>
+
+          <a href="https://instagram.com/seuUsuario" target="_blank" rel="noopener noreferrer">
+            <img src="src/static/LinkedIn_icon.png" alt="Instagram" />
+          </a>
+        </div>
+        
+      </div>
+    </div>
+  );
+}
