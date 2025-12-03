@@ -407,8 +407,8 @@ section {
   gap: 2vh;
   background: #e6e6e6;
   color: black;
-  padding: 70px 20px;
-  border-radius: 1vw;
+  padding: 1.2vw 2vw;
+  border-radius: .5vw;
   border: solid 0.1px rgba(86, 17, 17, 0.256);
   border-bottom: none;
   transition: all 0.4s ease;
@@ -426,7 +426,7 @@ section {
 
 .profile > img{
   width: 12vw;
-  border-radius: 1vw;
+  border-radius: .5vw;
 }
 
 .profile:hover{
@@ -865,7 +865,7 @@ section {
     margin-top: 30px;
     max-width: 80vw;
     width: 80vw;
-    padding: 35px 20px;
+    padding: 5vw;
   }
 
   .profile > img { width: 70vw; }
