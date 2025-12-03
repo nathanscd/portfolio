@@ -468,6 +468,7 @@ section {
 
 .tech-list span {
   font-family: "Rajdhani", sans-serif;
+  cursor: pointer;
   font-size: 1vw;
   padding: 6px 14px;
   background: rgba(255, 255, 255, 0.07);
@@ -481,6 +482,54 @@ section {
   transform: translateY(-2px);
   color: #fff;
 }
+
+.tech-list span:active{
+  scale:0.8;
+}
+
+.card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 30vw;
+  height: fit-content;
+  justify-content: space-around;
+  margin: 3vw;
+  padding: 3vw;
+  border-radius: 1vw;
+  background:linear-gradient(to top, rgb(38, 6, 6), black);
+  border: solid 0.1px rgba(255, 255, 255, 0.197);
+  opacity: .8;
+  cursor: pointer;
+}
+
+.card:hover{
+  opacity: 1;
+  scale: 1.010;
+}
+
+.card:active{
+  scale: 0.950;
+}
+
+.card > img{
+  border-radius: 0.2vw;
+  width: 25vw;
+  margin-bottom: 3vh;
+}
+
+.title-project{
+  font-family: "Orbitron", sans-serif;
+  text-align: left;
+  margin-right: auto;
+}
+
+.tech{
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 400;
+  margin-right: auto;
+}
+
 
 @media (max-width: 768px) {
   .nav-links-mobile { width: 100%; }
