@@ -488,141 +488,189 @@ section {
 }
 
 .filters-container {
-margin-bottom: 30px;
+  margin-top: 4vh;
+  padding: 20px;
+  border-radius: 15px;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.05), rgba(255, 0, 0, 0.1));
+  border: solid 0.1px rgba(255, 255, 255, 0.12);
 }
 
 .filters-title {
-font-family: Orbitron;
-font-size: 2vw;
+  font-family: Orbitron;
+  font-size: 2vw;
 }
 
 .filters-list {
-display: flex;
-flex-wrap: wrap;
-gap: 12px;
-margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 15px;
 }
 
 .filter-btn {
-padding: 8px 18px;
-border-radius: 8px;
-border: 1px solid rgba(255,0,0,0.3);
-background: rgba(255,255,255,0.05);
-color: white;
-cursor: pointer;
-transition: 0.2s;
-font-family: Rajdhani;
-font-size: 1.1vw;
+  padding: 8px 18px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,0,0,0.3);
+  background: rgba(255,255,255,0.05);
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+  font-family: Rajdhani;
+  font-size: 1.1vw;
 }
 
 .filter-btn:hover {
-background: rgba(255,0,0,0.2);
+  background: rgba(255,0,0,0.2);
 }
 
 .filter-btn.active {
-background: rgba(255,0,0,0.3);
-border-color: rgba(255,0,0,0.6);
+  scale: 0.9;
+  background: rgba(255,0,0,0.3);
+  border-color: rgba(255,0,0,0.6);
 }
 
 .projects-grid {
-margin-top: 40px;
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-gap: 35px;
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 35px;
 }
 
 .project-card {
-background: rgba(255,255,255,0.05);
-border-radius: 15px;
-padding: 20px;
-border: 1px solid rgba(255,0,0,0.25);
-cursor: pointer;
-transition: 0.3s;
+  background: rgba(255,255,255,0.05);
+  border-radius: 15px;
+  padding: 20px;
+  border: 1px solid rgba(255,0,0,0.25);
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 .project-card:hover {
-transform: scale(1.03) translateY(-4px);
-border-color: rgba(255,0,0,0.45);
+  transform: scale(1.03) translateY(-4px);
+  border-color: rgba(255,0,0,0.45);
+}
+
+.project-card:active{
+  scale:0.9;
 }
 
 .project-img {
-width: 100%;
-border-radius: 8px;
-margin-bottom: 15px;
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  border: solid 0.1px rgba(255, 255, 255, 0.247);
 }
 
 .proj-title {
-font-family: Orbitron;
-font-size: 1.3vw;
-margin-bottom: 5px;
+  font-family: Orbitron;
+  font-size: 1.3vw;
+  margin-bottom: 5px;
 }
 
 .proj-tech {
-font-size: 1vw;
-opacity: 0.8;
+  font-size: 1vw;
+  opacity: 0.8;
 }
 
 .proj-desc {
-margin-top: 10px;
-font-size: 0.9vw;
-opacity: 0.7;
+  margin-top: 10px;
+  font-size: 0.9vw;
+  opacity: 0.7;
 }
 
-/* MODAL */
-
 .modal-backdrop {
-position: fixed;
-inset: 0;
-background: rgba(0,0,0,0.65);
-backdrop-filter: blur(5px);
-display: flex;
-justify-content: center;
-align-items: center;
-z-index: 3000;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(3px);
+  opacity: 0;
+  animation: fadeIn 0.25s forwards ease;
 }
 
 .modal-window {
-width: 60vw;
-background: black;
-border-radius: 20px;
-border: 1px solid rgba(255,0,0,0.3);
-padding: 30px;
-position: relative;
+  background: linear-gradient(to bottom, rgb(41, 11, 11), black);
+  border: solid, 0.1px, rgba(255, 255, 255, 0.150);
+  padding: 30px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 650px;
+  opacity: 0;
+  transform: scale(0.95);
+  animation: modalPop 0.25s forwards ease;
 }
 
 .modal-img {
-width: 100%;
-border-radius: 10px;
-margin-bottom: 20px;
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 20px;
 }
 
 .modal-title {
-font-family: Orbitron;
-font-size: 2vw;
+  font-family: Orbitron;
+  font-size: 2vw;
 }
 
 .modal-tech {
-font-family: Rajdhani;
-font-size: 1.1vw;
-opacity: 0.8;
-margin-bottom: 15px;
+  font-family: Rajdhani;
+  font-size: 1.1vw;
+  opacity: 0.8;
+  margin-bottom: 15px;
 }
 
 .modal-desc {
-font-size: 1vw;
-margin-bottom: 30px;
-}
+  font-size: 1vw;
+  margin-bottom: 30px;
+} 
 
 .modal-close {
-background: rgba(255,0,0,0.25);
-padding: 8px 18px;
-border-radius: 6px;
-border: 1px solid rgba(255,0,0,0.4);
-cursor: pointer;
+  background: rgba(255,0,0,0.25);
+  padding: 8px 18px;
+  color: white;
+  border-radius: 6px;
+  border: 1px solid rgba(255,0,0,0.4);
+  cursor: pointer;
 }
 
 .modal-close:hover {
-background: rgba(255,0,0,0.5);
+  scale: 1.1;
+  background: rgba(255,0,0,0.5);
+}
+
+.modal-close:active{
+  scale: 0.9;
+}
+
+.modal-backdrop.fade-out {
+  animation: fadeOut 0.25s forwards ease;
+}
+
+.modal-window.pop-out {
+  animation: modalOut 0.25s forwards ease;
+}
+
+/* Keyframes entrada */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes modalPop {
+  0%   { opacity: 0; transform: scale(0.95); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* Keyframes saída */
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+@keyframes modalOut {
+  from { opacity: 1; transform: scale(1); }
+  to   { opacity: 0; transform: scale(0.95); }
 }
 
 

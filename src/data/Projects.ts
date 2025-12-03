@@ -10,14 +10,14 @@ export const projects: Project[] = [
   {
     id: 1,
     title: "GradeTracker",
-    image: "/static/GradeTracker.png",
+    image: "src/static/GradeTracker.png",
     tech: ["React", "TypeScript"],
     description: "Um sistema para acompanhar notas acadêmicas."
   },
   {
     id: 2,
     title: "Meu Portfólio",
-    image: "/static/portfolio.png",
+    image: "src/static/Portfólio.png",
     tech: ["React", "CSS"],
     description: "Site pessoal com design focado em corrida e performance."
   }
