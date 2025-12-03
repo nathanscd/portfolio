@@ -8,9 +8,9 @@ export default function LanguageSwitcher({ className }: LanguageSwitcherProps) {
   const { lang, toggleLang } = useLang();
 
   const nextLangText = {
-    "pt": "PT",
-    "en": "EN",
-    "spn": "ES"
+    "pt": "PT 🇧🇷",
+    "en": "EN 🇺🇲",
+    "spn": "ES 🇪🇸"
   };
 
   return (
