@@ -657,7 +657,7 @@ section {
   border-radius: .5vw;
   max-width: 20vw;
   z-index: 2;
-  box-shadow: 0px 0px 20px 30px rgba(0, 0, 0, 0.800);
+  box-shadow: 0px 0px 30px 30px rgba(0, 0, 0, 0.800);
 }
 
 .card-contact:hover{
