@@ -22,7 +22,6 @@ export const projects: Project[] = [
     date: "2024",
     media: [
       { type: "image", src: "src/static/GradeTracker.png" },
-      { type: "image", src: "src/static/GradeTracker_2.png" },
       { type: "video", src: "src/static/GradeTracker_demo.mp4" }
     ]
   },
