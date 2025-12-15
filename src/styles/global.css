@@ -133,7 +133,7 @@ body {
 
 .close:hover::before{
   border: 0.1px solid rgba(255, 0, 0, 0.383);
-  clip-path: polygon(0% 0%,100% 0%,100% 0%,100% 100%,0% 100%,0% 100%);
+  clip-path: polygon(0% 0%,92% 0%,92% 0%,100% 100%,8% 100%,8% 100%);
 }
 
 .close:active::before{
@@ -489,7 +489,7 @@ section {
 }
 
 .filters-container {
-  position: fixed;
+  position: absolute;
   top: 120px;
   width: 84%;
   padding: 20px;
@@ -876,7 +876,7 @@ section {
   .tech-list span { font-size: 4vw; }
 
   .filters-container {
-    position: fixed;
+    position: absolute;
     top: 100px;
     left: 50%;
     transform: translateX(-50%);
