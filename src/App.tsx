@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { LangProvider } from "./context/LangContext"; 
 import Header from "./components/Header";
 import Home from "./sections/Home";
 import About from "./sections/About";
 import Projects from "./sections/Projects";
 import Contact from "./sections/Contact";
+import Loader from "./components/Loader";
 
 
 type Section = "home" | "about" | "projects" | "contact";
@@ -12,7 +13,17 @@ type Section = "home" | "about" | "projects" | "contact";
 
 export default function App() {
   const [section, setSection] = useState<Section>("home");
+  const [loading, setLoading] = useState(true);
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 3700);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) return <Loader />;
 
   return (
     <LangProvider>
