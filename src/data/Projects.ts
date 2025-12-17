@@ -91,5 +91,20 @@ export const projects: Project[] = [
       { type: "image", src: "src/static/UltimateComparison_2.png" },
       { type: "video", src: "src/static/UltimateComparison_demo.mp4" }
     ]
+  },
+
+    {
+    id: 7,
+    title: "RPGMaster",
+    image: "src/static/Projetos/RPGMaster01.png",
+    tech: ["CSS", "React", "TypeScript"],
+    description: "Um sistema de gerenciamento de personagens para RPG inspirado no universo de Ordem Paranormal. O projeto foca em uma interface neon, sombria e funcional para facilitar a vida de mestres e jogadores.",
+    date: "2024",
+    media: [
+      { type: "image", src: "src/static/Projetos/RPGMaster01.png" },
+      { type: "image", src: "src/static/Projetos/RPGMaster02.png" },
+      { type: "image", src: "src/static/Projetos/RPGMaster03.png" },
+      { type: "video", src: "src/static/UltimateComparison_demo.mp4" }
+    ]
   }
 ];
