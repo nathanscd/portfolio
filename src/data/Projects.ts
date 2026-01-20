@@ -21,7 +21,7 @@ export const projects: Project[] = [
     image: "Projetos/1.png",
     tech: ["React",
     "TypeScript",
-    "Firebase (Firestore/Auth/Functions)",
+    "Google Firebase",
     "Tiptap (ProseMirror)",
     "Tailwind CSS",
     "OpenAI GPT-4 Turbo",
@@ -57,7 +57,7 @@ export const projects: Project[] = [
     id: 3,
     title: "RPGMaster",
     image: "Projetos/4.png",
-    tech: ["React", "CSS", "TypeScript", "Firebase (Firestore/Auth/Functions)", "Tailwind CSS"],
+    tech: ["React", "CSS", "TypeScript", "Google Firebase", "Tailwind CSS"],
     "description": "O RPG Master é uma plataforma de Virtual Tabletop (VTT) de alto desempenho, desenvolvida para transformar a experiência de jogo em mesa através de uma infraestrutura coesa, eficiente e visualmente impactante. O sistema foi construído utilizando React.js e TypeScript para garantir uma interface reativa e tipagem estática robusta, enquanto o Firebase (Firestore, Auth e Hosting) sustenta a sincronização de dados em tempo real entre mestre e jogadores. Entre as principais funcionalidades técnicas, destacam-se a manipulação dinâmica de imagens para mapas com suporte a Zoom-Pan-Pinch, sistemas de arrastar e soltar (Drag and Drop) para tokens, e algoritmos de processamento de dados que gerenciam automaticamente atributos, recursos e inventários complexos. A plataforma integra ferramentas avançadas como visão noturna via conic-gradients CSS, automação de rolagem de múltiplos dados com detecção de valores críticos e uma hierarquia de permissões que permite ao mestre criar e atribuir fichas diretamente a usuários específicos do banco de dados. O projeto demonstra habilidades avançadas em desenvolvimento Full Stack, integração de BaaS (Backend as a Service), gerenciamento de estados globais com Context API, criação de hooks customizados e automação de CI/CD via GitHub Actions para deploys contínuos e seguros.",
     date: "2026",
     media: [
