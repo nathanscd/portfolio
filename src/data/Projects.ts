@@ -58,12 +58,13 @@ export const projects: Project[] = [
     title: "RPGMaster",
     image: "Projetos/4.png",
     tech: ["React", "CSS", "TypeScript", "Firebase (Firestore/Auth/Functions)", "Tailwind CSS"],
-    description: "Ferramenta para jogar RPG de forma coesa, eficiente e interessante.",
+    "description": "O RPG Master é uma plataforma de Virtual Tabletop (VTT) de alto desempenho, desenvolvida para transformar a experiência de jogo em mesa através de uma infraestrutura coesa, eficiente e visualmente impactante. O sistema foi construído utilizando React.js e TypeScript para garantir uma interface reativa e tipagem estática robusta, enquanto o Firebase (Firestore, Auth e Hosting) sustenta a sincronização de dados em tempo real entre mestre e jogadores. Entre as principais funcionalidades técnicas, destacam-se a manipulação dinâmica de imagens para mapas com suporte a Zoom-Pan-Pinch, sistemas de arrastar e soltar (Drag and Drop) para tokens, e algoritmos de processamento de dados que gerenciam automaticamente atributos, recursos e inventários complexos. A plataforma integra ferramentas avançadas como visão noturna via conic-gradients CSS, automação de rolagem de múltiplos dados com detecção de valores críticos e uma hierarquia de permissões que permite ao mestre criar e atribuir fichas diretamente a usuários específicos do banco de dados. O projeto demonstra habilidades avançadas em desenvolvimento Full Stack, integração de BaaS (Backend as a Service), gerenciamento de estados globais com Context API, criação de hooks customizados e automação de CI/CD via GitHub Actions para deploys contínuos e seguros.",
     date: "2026",
     media: [
-      { type: "image", src: "UltimateComparison.png" },
-      { type: "image", src: "UltimateComparison_2.png" },
-      { type: "video", src: "UltimateComparison_demo.mp4" }
+      { type: "image", src: "/Projetos/RPGMaster01.png" },
+      { type: "image", src: "/Projetos/RPGMaster02.png" },
+      { type: "image", src: "/Projetos/RPGMaster03.png" },
+      { type: "video", src: "/Projetos/RPGMaster_demo.mp4" }
     ],
     "github": "https://github.com/nathanscd/RPGMaster",
     "link": "https://rpgmaster-ns.web.app/"
@@ -73,7 +74,7 @@ export const projects: Project[] = [
     id: 4,
     title: "CrossX",
     image:"Projetos/5.png",
-    tech: ["React", "CSS", "HTML", "TypeScript"],
+    tech: ["React", "CSS", "HTML", "TypeScript", "SQL"],
     description: "Ferramenta para comparação detalhada de produtos, serviços ou dados, permitindo análises rápidas e visuais.",
     date: "2025",
     media: [
@@ -88,7 +89,7 @@ export const projects: Project[] = [
     id: 5,
     title: "Sistema de Cadastro de Produtos",
     image:"Projetos/6.png",
-    tech: ["Java", "Swing", "PostGRESQL", "JavaFX"],
+    tech: ["Java", "Swing", "PostGRESQL", "JavaFX", "SQL"],
     description: "Ferramenta para cadastrar produtos, adicionar, preços e informações de clientes.",
     date: "2025",
     media: [

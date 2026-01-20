@@ -19,16 +19,10 @@ export default function ProjectList() {
     "Tudo",
     "HTML",
     "CSS",
-    "JavaScript",
     "TypeScript",
     "React",
     "Python",
     "SQL",
-    "Figma",
-    "After Effects",
-    "Photoshop",
-    "Illustrator",
-    "Premiere",
   ];
 
   const [activeFilter, setActiveFilter] = useState<string>("Tudo");
