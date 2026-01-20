@@ -12,9 +12,9 @@ export default function About() {
   >
     <div className="hero-abt">
       <div className="profile">
-        <img src="src/static/PFP.jpeg" />
+        <img src="PFP.jpeg" />
         <h1>Nathanael Secundo Cardoso</h1>
-        <h2>Desenvolvedor | Designer | Analista de Dados</h2>
+        <h2>Desenvolvedor Fullstack Júnior | Java, React.js, SQL | APIs REST, Web Applications, Banco de Dados</h2>
         <h2>Localidade: Fortaleza, CE - BR</h2>
       </div>
       <div>

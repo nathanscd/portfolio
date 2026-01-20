@@ -1,4 +1,7 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { X, ChevronLeft, ChevronRight, Github, ExternalLink } from "lucide-react"; 
+import "./Projects.css";
 
 type MediaItem = {
   type: "image" | "video";
@@ -6,11 +9,15 @@ type MediaItem = {
 };
 
 type Project = {
+  id: string | number;
   title: string;
   tech: string[];
   description: string;
-  date: string;
-  media: MediaItem[];
+  date?: string; 
+  media?: MediaItem[];
+  image: string; 
+  link?: string;
+  github?: string;
 };
 
 type Props = {
@@ -19,100 +26,130 @@ type Props = {
 };
 
 export default function ProjectModal({ project, onClose }: Props) {
-  const [closing, setClosing] = useState(false);
   const [current, setCurrent] = useState(0);
 
-  useEffect(() => {
-    if (!project) {
-      setClosing(true);
-      setTimeout(() => setClosing(false), 250);
-    } else {
-      setCurrent(0);
-    }
-  }, [project]);
+  if (!project) return null;
 
-  if (!project && !closing) return null;
+  const mediaList = project.media || [{ type: "image", src: project.image }];
 
   const next = () => {
-    if (!project) return;
-    setCurrent(prev =>
-      prev + 1 < project.media.length ? prev + 1 : 0
-    );
+    setCurrent((prev) => (prev + 1 < mediaList.length ? prev + 1 : 0));
   };
 
   const prev = () => {
-    if (!project) return;
-    setCurrent(prev =>
-      prev - 1 >= 0 ? prev - 1 : project.media.length - 1
-    );
+    setCurrent((prev) => (prev - 1 >= 0 ? prev - 1 : mediaList.length - 1));
   };
 
   return (
-    <div
-      className={`modal-backdrop ${closing ? "fade-out" : ""}`}
-      onClick={() => {
-        setClosing(true);
-        setTimeout(onClose, 250);
-      }}
+    <motion.div
+      className="modal-backdrop"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      onClick={onClose}
     >
-      <div
-        className={`modal-window ${closing ? "pop-out" : ""}`}
-        onClick={e => e.stopPropagation()}
+      <motion.div
+        className="modal-window"
+        initial={{ scale: 0.9, opacity: 0, y: 20 }}
+        animate={{ scale: 1, opacity: 1, y: 0 }}
+        exit={{ scale: 0.9, opacity: 0, y: 20 }}
+        onClick={(e) => e.stopPropagation()}
       >
-        <div className="modal-columns">
-          <div className="modal-left">
-            <h1 className="modal-title">{project?.title}</h1>
-            <h3 className="modal-tech">{project?.tech.join(" • ")}</h3>
-            <p className="modal-description">{project?.description}</p>
-            <p className="modal-date">Data: {project?.date}</p>
+        <button className="close-btn" onClick={onClose}>
+          <X size={24} />
+        </button>
+
+        <div className="modal-content">
+          <div className="carousel-section">
+            <div className="carousel-wrapper">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={current}
+                  className="media-container"
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -20 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  {mediaList[current].type === "video" ? (
+                    <video
+                      src={mediaList[current].src}
+                      controls
+                      className="modal-media"
+                    />
+                  ) : (
+                    <img
+                      src={mediaList[current].src}
+                      alt="Project preview"
+                      className="modal-media"
+                    />
+                  )}
+                </motion.div>
+              </AnimatePresence>
+
+              {mediaList.length > 1 && (
+                <>
+                  <button className="nav-btn prev" onClick={prev}>
+                    <ChevronLeft size={24} />
+                  </button>
+                  <button className="nav-btn next" onClick={next}>
+                    <ChevronRight size={24} />
+                  </button>
+                  <div className="indicators">
+                    {mediaList.map((_, i) => (
+                      <div
+                        key={i}
+                        className={`dot ${i === current ? "active" : ""}`}
+                        onClick={() => setCurrent(i)}
+                      />
+                    ))}
+                  </div>
+                </>
+              )}
+            </div>
           </div>
 
-          <div className="modal-right">
-            <div className="carousel">
-              <button className="carousel-btn" onClick={prev}>{"<"}</button>
-
-              <div className="carousel-content">
-                {project?.media[current].type === "image" && (
-                  <img
-                    src={project.media[current].src}
-                    className="carousel-media"
-                  />
-                )}
-
-                {project?.media[current].type === "video" && (
-                  <video
-                    src={project.media[current].src}
-                    className="carousel-media"
-                    controls
-                  />
-                )}
-              </div>
-
-              <button className="carousel-btn" onClick={next}>{">"}</button>
+          <div className="info-section">
+            <h2 className="modal-title">{project.title}</h2>
+            {project.date && <span className="modal-date">{project.date}</span>}
+            
+            <div className="tech-stack">
+              {project.tech.map((t) => (
+                <span key={t} className="tech-badge">{t}</span>
+              ))}
             </div>
 
-            <div className="carousel-indicators">
-              {project?.media.map((_, i) => (
-                <div
-                  key={i}
-                  className={`dot ${i === current ? "active" : ""}`}
-                  onClick={() => setCurrent(i)}
-                />
-              ))}
+            <div className="description-scroll">
+              <p>{project.description}</p>
+            </div>
+            
+            <div className="modal-actions">
+              {project.github && (
+                <a 
+                  href={project.github} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="action-btn github"
+                >
+                  <Github size={20} />
+                  GitHub
+                </a>
+              )}
+              {project.link && (
+                <a 
+                  href={project.link} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="action-btn live"
+                >
+                  <ExternalLink size={20} />
+                  Projeto Online
+                </a>
+              )}
             </div>
           </div>
         </div>
-
-        <button
-          className="modal-close"
-          onClick={() => {
-            setClosing(true);
-            setTimeout(onClose, 250);
-          }}
-        >
-          Fechar
-        </button>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }

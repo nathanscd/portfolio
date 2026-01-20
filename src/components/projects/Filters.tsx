@@ -1,4 +1,5 @@
-import React from "react";
+import { motion } from "framer-motion";
+import "./Projects.css";
 
 type Props = {
   filters: string[];
@@ -9,16 +10,21 @@ type Props = {
 export default function Filters({ filters, active, onChange }: Props) {
   return (
     <div className="filters-container">
-      <h2 className="filters-title">Filtros</h2>
-      <div className="filters-list">
-        {filters.map((f) => (
+      <div className="filters-scroll">
+        {filters.map((item) => (
           <button
-            key={f}
-            className={`filter-btn ${active === f ? "active" : ""}`}
-            onClick={() => onChange(f)}
-            type="button"
+            key={item}
+            onClick={() => onChange(item)}
+            className={`filter-btn ${active === item ? "active" : ""}`}
           >
-            {f}
+            {active === item && (
+              <motion.div
+                layoutId="activeFilter"
+                className="active-bg"
+                transition={{ type: "spring", stiffness: 300, damping: 30 }}
+              />
+            )}
+            <span className="filter-text">{item}</span>
           </button>
         ))}
       </div>

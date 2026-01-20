@@ -1,0 +1,396 @@
+:root {
+  --accent-red: #E4032E;
+  --accent-red-glow: rgba(228, 3, 46, 0.4);
+  --bg-dark: #050505;
+  --bg-card: #0d0d0d;
+  --glass-border: rgba(255, 255, 255, 0.06);
+  --text-main: #ffffff;
+  --text-dim: #9ca3af;
+  --transition-smooth: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* =========================================
+   LAYOUT GERAL
+   ========================================= */
+.projects-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 5rem 1.5rem;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2.5rem;
+  margin-top: 3rem;
+}
+
+/* =========================================
+   FILTROS (Minimalistas & Futuristas)
+   ========================================= */
+.filters-container {
+  margin-bottom: 4rem;
+  display: flex;
+  justify-content: center;
+}
+
+.filters-scroll {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 10px;
+  scrollbar-width: none;
+}
+
+.filters-scroll::-webkit-scrollbar { display: none; }
+
+.filter-btn {
+  padding: 0.7rem 1.6rem;
+  background: transparent;
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  color: var(--text-dim);
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.filter-btn:hover {
+  border-color: var(--accent-red);
+  color: #fff;
+  box-shadow: 0 0 15px rgba(228, 3, 46, 0.15);
+}
+
+.filter-btn.active {
+  background: var(--accent-red);
+  color: #fff;
+  border-color: var(--accent-red);
+  box-shadow: 0 4px 20px var(--accent-red-glow);
+}
+
+/* =========================================
+   CARDS (Design Aerodinâmico)
+   ========================================= */
+.project-card {
+  background: var(--bg-card);
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--glass-border);
+  position: relative;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.project-card:hover {
+  transform: translateY(-12px);
+  border-color: rgba(228, 3, 46, 0.4);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+}
+
+.card-image-container {
+  position: relative;
+  height: 240px;
+  background: #000;
+  overflow: hidden;
+}
+
+.project-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.project-card:hover .project-img {
+  transform: scale(1.08) rotate(-1deg);
+}
+
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.9) 10%, transparent 60%);
+  display: flex;
+  align-items: flex-end;
+  padding: 2rem;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.project-card:hover .card-overlay { opacity: 1; }
+
+.card-overlay span {
+  color: #fff;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  border-left: 2px solid var(--accent-red);
+  padding-left: 10px;
+}
+
+.card-content { padding: 2rem; }
+
+.proj-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.4rem;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.proj-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.tech-pill {
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-dim);
+  border: 1px solid var(--glass-border);
+  font-size: 0.65rem;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-family: 'Orbitron', sans-serif;
+  text-transform: uppercase;
+}
+
+.proj-desc {
+  color: var(--text-dim);
+  margin-top: 1.2rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  /* As propriedades abaixo fazem a mágica */
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Define o limite de 3 linhas */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* =========================================
+   MODAL (Cinema Showcase)
+   ========================================= */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.96);
+  backdrop-filter: blur(15px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.modal-window {
+  background: #080808;
+  width: 100%;
+  max-width: 1280px;
+  height: 85vh;
+  border-radius: 32px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 80px rgba(0,0,0,0.8);
+}
+
+.modal-content {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  height: 100%;
+}
+
+/* Foco Principal: Mídia */
+.carousel-section {
+  background: #000;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.carousel-wrapper {
+  width: 100%;
+  height: 100%;
+  padding: 30px;
+}
+
+.modal-media {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+/* Foco: Informações */
+.info-section {
+  padding: 50px;
+  background: linear-gradient(135deg, #0d0d0d 0%, #080808 100%);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.1;
+  margin-bottom: 8px;
+  background: linear-gradient(to right, #fff, #777);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.modal-date {
+  font-family: 'Rajdhani', sans-serif;
+  color: var(--accent-red);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-bottom: 30px;
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 35px;
+}
+
+.tech-badge {
+  background: rgba(228, 3, 46, 0.05);
+  border: 1px solid rgba(228, 3, 46, 0.2);
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.7rem;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.description-scroll {
+  color: #aaa;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Navegação e Close */
+.close-btn {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  transition: var(--transition-smooth);
+}
+
+.close-btn:hover {
+  background: var(--accent-red);
+  transform: rotate(90deg) scale(1.1);
+  box-shadow: 0 0 20px var(--accent-red-glow);
+}
+
+.nav-btn {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: white;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  backdrop-filter: blur(8px);
+  transition: var(--transition-smooth);
+}
+
+.nav-btn:hover {
+  background: var(--accent-red);
+  border-color: var(--accent-red);
+}
+
+.dot.active {
+  background: var(--accent-red);
+  width: 35px;
+  box-shadow: 0 0 10px var(--accent-red);
+}
+
+/* =========================================
+   ADAPTAÇÃO MOBILE (Perfeição)
+   ========================================= */
+@media (max-width: 1024px) {
+  .modal-content { grid-template-columns: 1fr; grid-template-rows: auto 1fr; }
+  .modal-window { height: 95vh; border-radius: 24px; }
+  .carousel-section { height: 40vh; border-right: none; }
+  .info-section { padding: 30px; }
+  .modal-title { font-size: 1.8rem; }
+}
+
+@media (max-width: 768px) {
+  .projects-container { padding: 3rem 1rem; }
+  .projects-grid { grid-template-columns: 1fr; }
+  .filters-container { justify-content: flex-start; }
+  .close-btn { top: 15px; right: 15px; width: 40px; height: 40px; }
+}
+
+.modal-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: auto;
+  padding-top: 30px;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: var(--transition-smooth);
+}
+
+.action-btn.github {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border);
+  color: #fff;
+}
+
+.action-btn.github:hover {
+  background: #fff;
+  color: #000;
+}
+
+.action-btn.live {
+  background: var(--accent-red);
+  color: #fff;
+  border: 1px solid var(--accent-red);
+}
+
+.action-btn.live:hover {
+  background: transparent;
+  box-shadow: 0 0 20px var(--accent-red-glow);
+}
+
+@media (max-width: 768px) {
+  .modal-actions {
+    flex-direction: column;
+  }
+}

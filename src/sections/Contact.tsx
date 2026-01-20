@@ -16,21 +16,21 @@ export default function Home() {
       </div>
 
       <div className="card-contact">
-        <img src="src/static/PFP.jpeg" className="card-img" />
+        <img src="PFP.jpeg" className="card-img" />
         <h1>NATHANAEL SECUNDO CARDOSO</h1>
         <h2>Contato</h2>
-        <p>Me chame para fecharmos um negócio</p>
+        <p>Disponível para novos desafios e arquiteturas de alto impacto.</p>
         <div className="container-social">
           <a href="https://github.com/nathanscd" target="_blank" rel="noopener noreferrer">
-            <img src="src/static/github_icon.png" alt="GitHub" />
+            <img src="github_icon.png" alt="GitHub" />
           </a>
 
           <a href="https://www.linkedin.com/in/nathanscd/" target="_blank" rel="noopener noreferrer">
-            <img src="src/static/LinkedIn_icon.png" alt="LinkedIn" />
+            <img src="LinkedIn_icon.png" alt="LinkedIn" />
           </a>
 
           <a href="https://instagram.com/nathansscd" target="_blank" rel="noopener noreferrer">
-            <img src="src/static/Instagram_icon.png" alt="Instagram" />
+            <img src="Instagram_icon.png" alt="Instagram" />
           </a>
         </div>
         
