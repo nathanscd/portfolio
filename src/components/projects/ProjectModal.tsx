@@ -74,7 +74,9 @@ export default function ProjectModal({ project, onClose }: Props) {
                   {mediaList[current].type === "video" ? (
                     <video
                       src={mediaList[current].src}
-                      controls
+                      autoPlay
+                      loop
+                      muted
                       className="modal-media"
                     />
                   ) : (
