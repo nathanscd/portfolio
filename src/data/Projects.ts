@@ -36,7 +36,7 @@ export const projects: Project[] = [
       { type: "image", src: "/Projetos/PODSADM/4.png" },
       { type: "video", src: "/Projetos/PODS - Google Chrome 2026-01-20 15-36-14.mp4" }
     ],
-    "github": "https://github.com/grade-tracker/grade-tracker"
+    "github": "https://github.com/nathanscd/PODSAdministrator"
   },
 
   {
