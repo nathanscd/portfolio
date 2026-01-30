@@ -65,7 +65,7 @@ export default function ProjectList() {
           <motion.h2 
             initial="hidden" whileInView="visible" viewport={{ once: true }}
             variants={slashIn} custom={1}
-            className="font-['Orbitron'] text-5xl md:text-[7.5rem] font-black italic uppercase leading-[0.9] tracking-tighter"
+            className="font-['Orbitron'] text-5xl md:text-[7.5rem] font-black text-black italic uppercase leading-[0.9] tracking-tighter"
           >
             ENGINEERING<br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#111111] via-[#333] to-[#FF001D]">

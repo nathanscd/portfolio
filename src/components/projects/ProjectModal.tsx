@@ -43,7 +43,6 @@ export default function ProjectModal({ project, onClose }: Props) {
         exit={{ opacity: 0, y: 20, scale: 0.98 }}
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Header Decorativo Superior */}
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#FF001D] to-transparent z-50" />
 
         <button 
@@ -53,9 +52,7 @@ export default function ProjectModal({ project, onClose }: Props) {
           <X size={22} strokeWidth={2.5} />
         </button>
 
-        {/* ÁREA DE MÍDIA - FOCO TOTAL NO VISUAL */}
         <div className="w-full bg-[#080808] flex items-center justify-center relative flex-[2.5] overflow-hidden group">
-          {/* Overlay de Telemetria */}
           <div className="absolute inset-0 z-10 pointer-events-none border-b border-[#ffffff0d]" 
                style={{ backgroundImage: 'linear-gradient(#ffffff03 1px, transparent 1px), linear-gradient(90deg, #ffffff03 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
           
@@ -84,7 +81,6 @@ export default function ProjectModal({ project, onClose }: Props) {
             </motion.div>
           </AnimatePresence>
 
-          {/* Navegação de Mídia */}
           {mediaList.length > 1 && (
             <div className="absolute bottom-6 flex items-center gap-4 z-20 bg-[#00000080] backdrop-blur-md p-2 rounded-full border border-[#ffffff1a]">
                <button onClick={(e) => {e.stopPropagation(); prev()}} className="p-2 text-white/70 hover:text-[#FF001D] transition-colors"><ChevronLeft size={20}/></button>
@@ -101,7 +97,6 @@ export default function ProjectModal({ project, onClose }: Props) {
           </div>
         </div>
 
-        {/* ÁREA DE CONTEÚDO - ELEGANTE E MINIMALISTA */}
         <div className="w-full bg-white p-8 md:px-12 md:py-10 flex flex-col flex-[1.5] overflow-y-auto">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 border-b border-gray-100 pb-8">
             <div className="space-y-3">

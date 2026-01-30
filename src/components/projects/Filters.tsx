@@ -41,7 +41,6 @@ export default function Filters({ filters, active, onChange }: Props) {
               </span>
             </div>
 
-            {/* Efeito de hover na borda inferior */}
             <div className={`absolute bottom-0 left-0 h-[2px] bg-[#FF001D] transition-all duration-300 ${active === item ? "w-full" : "w-0 group-hover:w-1/2"}`} />
           </button>
         ))}

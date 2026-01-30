@@ -1,246 +1,183 @@
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence, Variants } from "framer-motion";
-import { useLang } from "../context/LangContext";
-import { ChevronRight, Gauge, Zap, Flag, Map, User, Mail } from "lucide-react";
-import SpeedLoader from "../components/SpeedLoader";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Gauge, Zap, ChevronRight, Activity, MapPin, Trophy, Target, Cpu, Network } from "lucide-react";
 
-type SectionType = "home" | "about" | "projects" | "contact";
+export default function Home({ setSection }: { setSection: (val: any) => void }) {
+  const [engineStatus, setEngineStatus] = useState<"idle" | "cranking" | "ready">("idle");
 
-export default function Home({ setSection }: { setSection: (val: SectionType) => void }) {
-  const { t } = useLang();
-  
-  const [isLoading, setIsLoading] = useState(true);
-  const [isStarting, setIsStarting] = useState(false);
-  const [showPitMenu, setShowPitMenu] = useState(false);
-  const [isNavigating, setIsNavigating] = useState(false);
-  const [targetSection, setTargetSection] = useState<SectionType>("home");
-
-  const handleInitialLoadFinish = () => {
-    setIsLoading(false);
-  };
-
-  const handleEngineStart = () => {
-    setIsStarting(true);
+  const startIgnition = () => {
+    setEngineStatus("cranking");
     setTimeout(() => {
-      setIsStarting(false);
-      setShowPitMenu(true);
-    }, 1500); 
-  };
-
-  const handleNavigationHome = (section: SectionType) => {
-    setTargetSection(section);
-    setShowPitMenu(false);
-    setIsNavigating(true);
-  };
-
-  const onNavigationFinish = () => {
-    setIsNavigating(false);
-    setSection(targetSection);
-    
-    // O segredo está aqui: forçar o scroll após o loader sair
-    const targetId = targetSection === "home" ? "root" : targetSection;
-    const element = document.getElementById(targetId);
-    
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    } else {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-  };
-
-  const slashIn: Variants = {
-    hidden: { x: -100, opacity: 0, skewX: 20 },
-    visible: (custom: number = 0) => ({
-      x: 0, 
-      opacity: 1, 
-      skewX: 0,
-      transition: { delay: custom, duration: 0.6, ease: [0.16, 1, 0.3, 1] }
-    })
-  };
-
-  const engineButtonVariants: Variants = {
-    idle: { scale: 1, boxShadow: "0px 0px 0px rgba(255, 0, 29, 0)" },
-    hover: { scale: 1.05, boxShadow: "0px 10px 30px rgba(255, 0, 29, 0.4)" },
-    cranking: {
-      scale: [1, 1.02, 0.98, 1.01, 1],
-      x: [0, -3, 3, -2, 2, 0],
-      backgroundColor: ["#FF001D", "#8a000e", "#FF001D"],
-      transition: { duration: 0.1, repeat: Infinity }
-    }
-  };
-
-  const menuContainerVariants: Variants = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: { 
-        opacity: 1, scale: 1,
-        transition: { staggerChildren: 0.1, delayChildren: 0.2 }
-    },
-    exit: { opacity: 0, scale: 1.1, filter: "blur(10px)" }
-  };
-
-  const menuItemVariants: Variants = {
-    hidden: { x: -50, opacity: 0 },
-    visible: { x: 0, opacity: 1, transition: { type: "spring", stiffness: 100 } }
+      setEngineStatus("ready");
+    }, 2000);
   };
 
   return (
-    <>
-      <AnimatePresence mode="wait">
-        {(isLoading || isNavigating) && (
-            <SpeedLoader onFinish={isLoading ? handleInitialLoadFinish : onNavigationFinish} />
-        )}
-      </AnimatePresence>
+    <div className="bg-white">
+      <section className="relative min-h-screen flex items-center justify-center pt-24 pb-12 px-6 md:px-12 overflow-hidden">
+        <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none" 
+             style={{ backgroundImage: 'linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
 
-      <motion.section
-        id="home"
-        className="w-full h-screen bg-white flex flex-col justify-center px-6 relative overflow-hidden"
-        initial="hidden"
-        animate="visible"
-      >
-        <div className="absolute top-0 right-0 w-3/4 md:w-[45%] h-full bg-[#f4f4f4] -skew-x-12 translate-x-20 md:translate-x-32 z-0 border-l-4 border-[#FF001D]/10"></div>
-        <motion.div 
-          className="absolute inset-0 z-0 opacity-[0.05]"
-          style={{
-            backgroundImage: 'linear-gradient(to right, #000 1px, transparent 1px), linear-gradient(to bottom, #000 1px, transparent 1px)',
-            backgroundSize: '60px 60px'
-          }}
-          animate={{ backgroundPosition: ['0px 0px', '-60px 60px'] }}
-          transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-        />
-        
-        <div className="max-w-7xl w-full mx-auto relative z-10">
-          <div className="flex flex-col items-start">
-            
-            <motion.div variants={slashIn} custom={0.2} className="flex items-center gap-3 mb-4 pl-1">
-              <Gauge size={18} className="text-[#FF001D] animate-pulse" />
-              <span className="font-['Orbitron'] text-[#FF001D] font-bold tracking-[0.3em] uppercase text-xs md:text-sm">
-                SYSTEM READY // {t.title}
-              </span>
+        <div className="max-w-[1500px] w-full mx-auto grid lg:grid-cols-12 gap-12 items-center relative z-10">
+          <div className="lg:col-span-4 space-y-8 order-2 lg:order-1">
+            <motion.div initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} className="relative group">
+              <div className="absolute -inset-4 border border-gray-100 group-hover:border-[#FF001D] transition-colors duration-500 skew-x-[-2deg]" />
+              <img src="PFP.jpeg" className="w-full contrast-125 brightness-90 relative z-10" />
+              <div className="absolute -bottom-6 -left-6 z-20 bg-[#FF001D] text-white p-6 skew-x-[-15deg] shadow-2xl">
+                 <div className="skew-x-[15deg]">
+                    <span className="block font-['Orbitron'] text-5xl font-black leading-none">15</span>
+                    <span className="text-[10px] font-bold tracking-[0.3em] uppercase opacity-80">Driver Unit</span>
+                 </div>
+              </div>
             </motion.div>
-
-            <div className="relative z-20">
-              <motion.h1 variants={slashIn} custom={0.4} className="font-['Orbitron'] text-6xl md:text-[9rem] font-black italic uppercase leading-[0.85] tracking-tighter text-[#111111]">
-                NATHANAEL
-              </motion.h1>
-              <motion.h1 variants={slashIn} custom={0.5} className="font-['Orbitron'] text-6xl md:text-[9rem] font-black italic uppercase leading-[0.85] tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-[#111111] via-[#555] to-transparent">
-                SECUNDO
-              </motion.h1>
+            <div className="flex flex-col gap-1 border-l-4 border-black pl-8 pt-4">
+              <div className="flex items-center gap-2 text-gray-400">
+                 <MapPin size={14} className="text-[#FF001D]" />
+                 <span className="font-['Orbitron'] text-[10px] font-bold tracking-widest uppercase">Base Region</span>
+              </div>
+              <h3 className="font-['Orbitron'] text-2xl font-black italic uppercase text-[#111]">Fortaleza, CE // BR</h3>
             </div>
+          </div>
 
-            <div className="mt-10 flex flex-col md:flex-row gap-6 items-start z-20">
-              <motion.div 
-                initial={{ height: 0 }} animate={{ height: "120px" }} transition={{ delay: 0.8 }}
-                className="hidden md:block w-2 bg-[#FF001D] skew-x-[-12deg]"
-              />
-              <motion.p 
-                initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.9 }}
-                className="font-['Manrope'] text-[#444] text-lg md:text-xl font-semibold max-w-xl leading-relaxed tracking-wide"
-              >
-                {t.sub}
-              </motion.p>
+          <div className="lg:col-span-5 flex flex-col items-start order-1 lg:order-2">
+            <div className="flex items-center gap-3 mb-8 bg-black/5 px-5 py-2.5 border-r-4 border-[#FF001D] w-fit">
+              <Gauge size={20} className="text-[#FF001D] animate-pulse" />
+              <span className="font-['Orbitron'] text-[#111] font-black tracking-[0.4em] uppercase text-[10px]">Status: Optimal // 2026</span>
             </div>
+            <h1 className="font-['Orbitron'] text-6xl md:text-[8.5rem] font-black italic uppercase leading-[0.75] tracking-tighter text-[#111]">NATHANAEL</h1>
+            <h1 className="font-['Orbitron'] text-6xl md:text-[8.5rem] font-black italic uppercase leading-[0.75] tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-[#111] to-[#FF001D]">SECUNDO</h1>
+            <p className="mt-10 font-['Manrope'] text-[#555] text-xl font-semibold max-w-lg leading-relaxed border-l-2 border-gray-100 pl-6">Analista de Sistemas focado em engenharia de alta performance e automação de fluxos operacionais.</p>
+          </div>
 
-            <div className="mt-16 relative z-30">
-              <motion.button
-                onClick={handleEngineStart}
-                disabled={isStarting}
-                variants={engineButtonVariants}
-                initial="idle"
-                whileHover={isStarting ? "cranking" : "hover"}
-                animate={isStarting ? "cranking" : "idle"}
-                className="group relative inline-flex items-center justify-center px-12 py-6 bg-[#FF001D] overflow-hidden font-['Orbitron'] font-black italic uppercase text-white tracking-widest text-xl skew-x-[-12deg] border-b-4 border-[#b30014] active:border-b-0 active:translate-y-1 transition-all select-none shadow-2xl cursor-pointer"
-              >
-                <span className="relative skew-x-[12deg] flex items-center gap-3 z-10">
-                  {isStarting ? <>IGNITION SEQUENCE <Zap className="animate-bounce" /></> : <>START ENGINE <ChevronRight /></>}
-                </span>
-                <span className="absolute inset-0 w-[200%] h-full bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-500 ease-in-out"></span>
-              </motion.button>
-            </div>
-
+          <div className="lg:col-span-3 flex flex-col gap-2 order-3">
           </div>
         </div>
+      </section>
 
-        <AnimatePresence>
-            {showPitMenu && (
-                <motion.div 
-                    className="fixed inset-0 z-[100] bg-black/80 backdrop-blur-md flex items-center justify-center p-4"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    onClick={() => setShowPitMenu(false)}
-                >
-                    <motion.div 
-                        className="bg-white w-full max-w-4xl p-8 md:p-12 relative border-y-8 border-[#FF001D] skew-x-[-2deg] shadow-[0_0_50px_rgba(255,0,29,0.3)]"
-                        variants={menuContainerVariants}
-                        initial="hidden"
-                        animate="visible"
-                        exit="exit"
-                        onClick={(e) => e.stopPropagation()}
-                    >
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <PitButton 
-                                title="TELEMETRY" 
-                                subtitle="Sobre Mim" 
-                                icon={<User size={32} />} 
-                                onClick={() => handleNavigationHome("about")} 
-                                variants={menuItemVariants}
-                            />
-                            <PitButton 
-                                title="TRACK RECORD" 
-                                subtitle="Projetos" 
-                                icon={<Flag size={32} />} 
-                                onClick={() => handleNavigationHome("projects")} 
-                                variants={menuItemVariants}
-                            />
-                            <PitButton 
-                                title="RADIO CHECK" 
-                                subtitle="Contato" 
-                                icon={<Mail size={32} />} 
-                                onClick={() => handleNavigationHome("contact")} 
-                                variants={menuItemVariants}
-                            />
-                             <PitButton 
-                                title="PADDOCK" 
-                                subtitle="Home" 
-                                icon={<Map size={32} />} 
-                                onClick={() => handleNavigationHome("home")}
-                                variants={menuItemVariants}
-                            />
-                        </div>
-                        <button 
-                            className="absolute -bottom-10 left-1/2 -translate-x-1/2 text-white/50 hover:text-white font-['Orbitron'] text-sm tracking-widest uppercase mt-8 transition-colors"
-                            onClick={() => setShowPitMenu(false)}
-                        >
-                            [ CANCEL STRATEGY ]
-                        </button>
-                    </motion.div>
-                </motion.div>
+      <section className="py-32 px-6 bg-white relative overflow-hidden border-b border-gray-100">
+        <div className="absolute inset-0 opacity-[0.03] pointer-events-none z-0" 
+             style={{ backgroundImage: 'linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
+        
+        <div className="max-w-4xl mx-auto relative z-10">
+          <div className="flex items-center gap-3 mb-16">
+            <div className="w-2 h-2 bg-[#FF001D] rounded-full animate-ping" />
+            <h2 className="font-['Orbitron'] text-xs font-black italic uppercase tracking-[0.5em] text-[#111]">Telemetry // Pilot Stats</h2>
+          </div>
+
+          <div className="flex flex-col border-t border-gray-200">
+            <LeclercStatCard label="Semestre Atual" value="05" sub="CIÊNCIA DA COMPUTAÇÃO" />
+            <LeclercStatCard label="Redução de Tempo" value="63%" sub="OTIMIZAÇÃO OPERACIONAL" />
+            <LeclercStatCard label="Economia Direta" value="U$600" sub="POUPANÇA ANUAL ESTIMADA" />
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#050505] py-40 px-6 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-24 gap-12">
+            <div className="space-y-4 text-left">
+              <div className="flex items-center gap-2">
+                <div className="w-12 h-[1px] bg-[#FF001D]" />
+                <span className="font-['Orbitron'] text-[#FF001D] font-black tracking-[0.5em] text-[10px] uppercase">Core Architecture</span>
+              </div>
+              <h2 className="font-['Orbitron'] text-6xl md:text-8xl text-white font-black italic uppercase leading-none">
+                TECHNICAL<br/><span className="text-white/20">TELEMETRY</span>
+              </h2>
+            </div>
+            
+            <div className="flex flex-wrap gap-4">
+              <div className="p-8 border-l border-white/10 bg-white/[0.02] backdrop-blur-3xl group hover:bg-white/[0.05] transition-all text-left">
+                <Cpu className="text-[#FF001D] mb-6 group-hover:scale-110 transition-transform" size={40} />
+                <span className="block font-['Orbitron'] text-white text-lg font-black tracking-tighter">ENGINEERING</span>
+                <span className="text-white/30 text-[9px] font-bold tracking-[0.3em] uppercase italic">Backend Systems</span>
+              </div>
+              <div className="p-8 border-l border-white/10 bg-white/[0.02] backdrop-blur-3xl group hover:bg-white/[0.05] transition-all text-left">
+                <Network className="text-[#FF001D] mb-6 group-hover:scale-110 transition-transform" size={40} />
+                <span className="block font-['Orbitron'] text-white text-lg font-black tracking-tighter">INTERFACE</span>
+                <span className="text-white/30 text-[9px] font-bold tracking-[0.3em] uppercase italic">Frontend Mastery</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 border border-white/5">
+            {['React', 'TypeScript', 'SQL Server', 'Python', 'Docker', 'AWS', 'C#', 'PostgreSQL'].map((tech) => (
+              <div key={tech} className="relative aspect-square md:aspect-auto md:h-48 border border-white/5 flex flex-col items-center justify-center group overflow-hidden">
+                <div className="absolute inset-0 bg-[#FF001D] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-0" />
+                <span className="font-['Orbitron'] text-white/40 group-hover:text-white font-black italic text-xl tracking-[0.2em] relative z-10 transition-all">
+                  {tech}
+                </span>
+                <div className="absolute bottom-4 opacity-0 group-hover:opacity-100 transition-opacity z-10">
+                   <div className="h-[1px] w-8 bg-white" />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#FF001D] py-40 px-6 flex flex-col items-center text-center overflow-hidden relative">
+        <div className="absolute inset-0 opacity-10 font-['Orbitron'] text-[20rem] font-black italic text-black whitespace-nowrap pointer-events-none select-none">
+          SECUNDO 16 SECUNDO 16
+        </div>
+        
+        <div className="relative z-10 space-y-12 max-w-2xl w-full">
+          <h2 className="font-['Orbitron'] text-4xl md:text-6xl text-white font-black italic uppercase tracking-tighter">Ready to ignite the project?</h2>
+          
+          <AnimatePresence mode="wait">
+            {engineStatus === "idle" && (
+              <motion.button 
+                key="idle-btn"
+                initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+                onClick={startIgnition}
+                className="group w-full flex items-center justify-center gap-6 bg-white text-[#FF001D] px-12 py-6 skew-x-[-12deg] hover:bg-black hover:text-white transition-all shadow-2xl"
+              >
+                <div className="skew-x-[12deg] flex items-center gap-4 font-['Orbitron'] font-black italic tracking-[0.2em]">
+                  START ENGINE <ChevronRight className="group-hover:translate-x-2 transition-transform" />
+                </div>
+              </motion.button>
             )}
-        </AnimatePresence>
-      </motion.section>
-    </>
+
+            {engineStatus === "cranking" && (
+              <motion.div 
+                key="cranking-ui"
+                initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+                className="flex flex-col items-center gap-4"
+              >
+                <Activity className="text-white animate-spin" size={48} />
+                <span className="font-['Orbitron'] text-white font-black uppercase tracking-widest">Ignition Sequence Active...</span>
+              </motion.div>
+            )}
+
+            {engineStatus === "ready" && (
+              <motion.div 
+                key="nav-options"
+                initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }}
+                className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full"
+              >
+                <button onClick={() => setSection("projects")} className="py-6 bg-white text-black font-['Orbitron'] font-black italic uppercase text-xs tracking-widest skew-x-[-10deg] hover:bg-black hover:text-white transition-all"><span className="skew-x-[10deg] block">Projects</span></button>
+                <button onClick={() => setSection("about")} className="py-6 bg-white text-black font-['Orbitron'] font-black italic uppercase text-xs tracking-widest skew-x-[-10deg] hover:bg-black hover:text-white transition-all"><span className="skew-x-[10deg] block">About</span></button>
+                <button onClick={() => setSection("contact")} className="py-6 bg-white text-black font-['Orbitron'] font-black italic uppercase text-xs tracking-widest skew-x-[-10deg] hover:bg-black hover:text-white transition-all"><span className="skew-x-[10deg] block">Contact</span></button>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+      </section>
+    </div>
   );
 }
 
-function PitButton({ title, subtitle, icon, onClick, variants }: any) {
-    return (
-        <motion.button
-            variants={variants}
-            onClick={onClick}
-            className="group flex items-center gap-6 p-6 border-2 border-gray-100 hover:border-[#FF001D] bg-gray-50 hover:bg-black transition-all duration-300 text-left relative overflow-hidden w-full cursor-pointer"
-        >
-            <div className="p-4 bg-white border border-gray-200 group-hover:bg-[#FF001D] group-hover:text-white group-hover:border-[#FF001D] transition-colors rounded-sm shadow-sm">
-                {icon}
-            </div>
-            <div>
-                <h3 className="font-['Orbitron'] font-black text-2xl italic text-[#111] group-hover:text-white uppercase leading-none mb-1 transition-colors">
-                    {title}
-                </h3>
-                <p className="font-['Manrope'] font-bold text-gray-400 group-hover:text-[#FF001D] uppercase text-sm tracking-widest transition-colors">
-                    {subtitle}
-                </p>
-            </div>
-            <div className="absolute right-0 top-0 h-full w-2 bg-[#FF001D] translate-x-full group-hover:translate-x-0 transition-transform duration-300" />
-        </motion.button>
-    );
+function LeclercStatCard({ label, value, sub }: any) {
+  return (
+    <div className="flex flex-col md:flex-row md:items-center justify-between py-10 border-b border-gray-200 group transition-all duration-500 hover:bg-[#f9f9f9] px-4">
+      <div className="order-2 md:order-1 space-y-1 text-left">
+        <span className="block font-['Orbitron'] text-[11px] font-black text-gray-400 uppercase tracking-[0.3em] group-hover:text-[#FF001D] transition-colors">{label}</span>
+        <p className="font-['Orbitron'] text-[10px] font-bold text-gray-300 italic group-hover:text-gray-400 uppercase tracking-wider">{sub}</p>
+      </div>
+      <div className="order-1 md:order-2 mb-4 md:mb-0">
+        <span className="font-['Orbitron'] text-7xl md:text-8xl font-black italic text-[#111] leading-none tracking-tighter block group-hover:scale-105 transition-transform origin-right">
+          {value}
+        </span>
+      </div>
+    </div>
+  );
 }

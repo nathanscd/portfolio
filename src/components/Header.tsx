@@ -65,7 +65,6 @@ export default function Navbar({ setSection }: Props) {
       <AnimatePresence>
         {open && (
           <>
-            {/* Backdrop com desfoque pesado */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -74,7 +73,6 @@ export default function Navbar({ setSection }: Props) {
               onClick={() => setOpen(false)}
             />
 
-            {/* Menu Drawer Estilo Racing */}
             <motion.div
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
@@ -82,7 +80,6 @@ export default function Navbar({ setSection }: Props) {
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
               className="fixed top-0 right-0 w-full md:w-[600px] h-full bg-[#0a0a0a] z-[70] border-l border-white/5 shadow-2xl flex flex-col overflow-hidden"
             >
-              {/* Linha Decorativa Superior */}
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#FF001D] to-transparent" />
 
               <div className="flex justify-between items-center p-10">
