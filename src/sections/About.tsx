@@ -37,7 +37,7 @@ export default function About() {
           >
             <Gauge size={20} className="text-[#FF001D] animate-pulse" />
             <span className="font-['Orbitron'] text-[#FF001D] font-bold tracking-[0.4em] uppercase text-sm">
-              Technical Telemetry // Driver Profile
+              Technical Telemetry // {t.about.subtitle}
             </span>
           </motion.div>
           
@@ -66,15 +66,15 @@ export default function About() {
               <img src="PFP.jpeg" alt="Nathanael" className="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 transition-all duration-700" />
               <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black to-transparent p-6">
                 <span className="text-white font-['Orbitron'] font-black italic text-2xl">BRAZIL</span>
-                <p className="text-gray-300 text-xs font-bold uppercase tracking-widest">Fortaleza, CE</p>
+                <p className="text-gray-300 text-xs font-bold uppercase tracking-widest">{t.home.hometown_value}</p>
               </div>
             </motion.div>
 
             <div className="grid grid-cols-1 gap-4">
-              <StatCard label="Semestre" value="05" sub="Ciência da Computação" />
-              <StatCard label="Economia Anual" value="U$600" sub="Otimização de Processos" />
-              <StatCard label="Redução de Tempo" value="63%" sub="Eficiência Operacional" />
-              <StatCard label="Produtividade" value="+67%" sub="Automação Python" />
+              <StatCard label={t.home.stat_semester} value="05" sub={t.home.stat_semester_sub} />
+              <StatCard label={t.home.stat_economy} value="U$600" sub={t.home.stat_economy_sub} />
+              <StatCard label={t.home.stat_reduction} value="63%" sub={t.home.stat_reduction_sub} />
+              <StatCard label={t.home.stat_prod} value="+67%" sub={t.home.stat_prod_sub} />
             </div>
           </div>
 
@@ -84,13 +84,13 @@ export default function About() {
                 <Activity size={150} />
               </div>
               <p className="font-['Manrope'] text-xl md:text-2xl font-light italic leading-relaxed relative z-10">
-                "Analista de Desenvolvimento Júnior focado na <span className="text-[#FF001D] font-bold">otimização de sistemas</span> e automação de processos, com histórico de redução real de até 63% no tempo operacional."
+                "{t.about.description}"
               </p>
             </div>
 
             <div className="space-y-6">
               <h3 className="font-['Orbitron'] text-xl font-bold flex items-center gap-3 uppercase">
-                <Award className="text-[#FF001D]" /> Performance Upgrades // Certifications
+                <Award className="text-[#FF001D]" /> {t.about.cert_title}
               </h3>
               <div className="grid md:grid-cols-3 gap-4">
                 {certifications.map((cert, i) => (
@@ -110,7 +110,7 @@ export default function About() {
             <div className="grid md:grid-cols-1 gap-12 pt-4">
               <CareerBlock 
                 icon={<Briefcase size={22}/>} 
-                title="Professional Track" 
+                title={t.about.experience_title} 
                 items={[
                   { 
                     t: "Eletra Energy Solutions", 
@@ -135,7 +135,7 @@ export default function About() {
 
               <CareerBlock 
                 icon={<GraduationCap size={22}/>} 
-                title="Education Pit" 
+                title={t.about.education_title} 
                 items={[
                   { 
                     t: "Estácio", 
@@ -154,7 +154,7 @@ export default function About() {
             </div>
 
             <div className="pt-4">
-              <h3 className="font-['Orbitron'] text-xs font-bold mb-6 text-gray-400 uppercase tracking-[0.3em]">Tech Telemetry</h3>
+              <h3 className="font-['Orbitron'] text-xs font-bold mb-6 text-gray-400 uppercase tracking-[0.3em]">{t.about.skills_title}</h3>
               <div className="flex flex-wrap gap-2">
                 {skills.map((skill) => (
                   <span 

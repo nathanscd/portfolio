@@ -1,6 +1,67 @@
 {
-  "title": "Desarrollador | Diseñador | Analista de datos",
-  "description": "Centrado en el rendimiento, el diseño y la calidad.",
-  "abt": "Acerca de mí",
-  "abtText": "Soy un Desarrollador Fullstack Junior especializado en backend de Java y frontend de React.js, y me dedico al desarrollo de aplicaciones web completas, desde la lógica de negocio hasta la interfaz de usuario. Trabajo en la creación y el uso de APIs REST, la integración frontend y backend, y la persistencia de datos en bases de datos relacionales. Tengo experiencia práctica con Java, React.js, SQL y Python, utilizando PostgreSQL y MySQL, así como en el control de versiones con Git. Trabajo en el desarrollo de aplicaciones fullstack, la automatización de procesos, la integración de sistemas, el mantenimiento de código y la corrección de errores, siguiendo buenas prácticas de organización y desarrollo. Tengo experiencia en la implementación de funcionalidades backend, la creación de interfaces en React.js, el análisis de requisitos técnicos, las pruebas básicas y la documentación de procesos. Cuento con una sólida base en desarrollo web con HTML, CSS y JavaScript, centrándome en aplicaciones de alto rendimiento y bien estructuradas. Busco oportunidades como Desarrollador Fullstack Junior, trabajando con Java, React.js, APIs REST y bases de datos SQL, donde pueda crecer técnicamente y contribuir de forma constante a proyectos reales."
+  "nav": {
+    "home": "INICIO",
+    "about": "SOBRE MÍ",
+    "projects": "PROYECTOS",
+    "contact": "CONTACTO",
+    "menu_open": "ABRIR MENÚ",
+    "system_status": "SISTEMA ONLINE"
+  },
+  "home": {
+    "driver_number": "15",
+    "driver_unit": "UNIDAD DE PILOTO",
+    "hometown_label": "CIUDAD NATAL",
+    "hometown_value": "FORTALEZA, CE // BR",
+    "telemetry_status": "ESTADO DE TELEMETRÍA: ÓPTIMO",
+    "first_name": "NATHANAEL",
+    "last_name": "SECUNDO",
+    "role_description": "Analista de Sistemas enfocado en ingeniería de alto rendimiento y automatización de flujos operativos.",
+    "start_engine": "ARRANCAR MOTOR",
+    "cranking": "IGNICIÓN ACTIVA...",
+    "stats_label": "ESTADÍSTICAS EN VIVO",
+    "stat_semester": "SEMESTRE ACTUAL",
+    "stat_semester_sub": "CIENCIAS DE LA COMPUTACIÓN",
+    "stat_reduction": "REDUCCIÓN DE TIEMPO",
+    "stat_reduction_sub": "OPTIMIZACIÓN OPERATIVA",
+    "stat_economy": "AHORRO DIRECTO",
+    "stat_economy_sub": "AHORRO ANUAL ESTIMADO",
+    "stat_prod": "PRODUCTIVIDAD",
+    "stat_prod_sub": "AUTOMATIZACIÓN PYTHON"
+  },
+  "about": {
+    "title": "NATHANAEL SECUNDO",
+    "subtitle": "PERFIL DEL PILOTO",
+    "description": "Soy Desarrollador Fullstack Junior con enfoque en Java en el backend e React.js en el frontend, trabajando en el desarrollo de aplicaciones web completas, desde la lógica de negocio hasta la interfaz de usuario. Trabajo con la creación y consumo de APIs REST, integración entre frontend y backend y persistencia de datos en bases de datos relacionales.",
+    "experience_title": "TRAYECTORIA PROFESIONAL",
+    "education_title": "BOX DE EDUCACIÓN",
+    "skills_title": "TELEMETRÍA TECNOLÓGICA",
+    "cert_title": "MEJORAS DE RENDIMIENTO // CERTIFICACIONES"
+  },
+  "projects": {
+    "title": "ARCHIVO DE INGENIERÍA",
+    "subtitle": "HISTORIAL DE CARRERAS // PROYECTOS",
+    "filter_label": "FILTRAR POR TECNOLOGÍA",
+    "view_details": "VER DETALLES",
+    "code_link": "REPOSITORIO",
+    "live_link": "SISTEMA ACTIVO",
+    "no_results": "NO SE ENCONTRARON RESULTADOS NA BASE DE DATOS"
+  },
+  "contact": {
+    "title": "ESTABLECER CONEXIÓN",
+    "subtitle": "CANAL DE COMUNICACIÓN // COMMS",
+    "info_card": "Listo para integrar su equipo y elevar el rendimiento de sus sistemas.",
+    "social_label": "TELEMETRÍA SOCIAL",
+    "form_title": "MENSAJE DIRECTO",
+    "form_name": "NOMBRE DEL PILOTO",
+    "form_name_placeholder": "IDENTIFÍQUESE",
+    "form_email": "CANAL DE COMUNICACIÓN",
+    "form_email_placeholder": "SU EMAIL",
+    "form_subject": "ASUNTO",
+    "form_subject_placeholder": "TEMA DEL BRIEFING",
+    "form_message": "DATOS DEL MENSAJE",
+    "form_message_placeholder": "TRANSMITA SU MENSAJE...",
+    "form_submit": "TRANSMITIR DATOS // ENVIAR",
+    "success": "ENVIADO CON ÉXITO",
+    "error": "ERROR NA TRANSMISIÓN"
+  }
 }

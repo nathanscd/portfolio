@@ -1,6 +1,67 @@
 {
-  "title": "Developer | Designer | Data Analyst",
-  "description": "Focused on performance, design and quality.",
-  "abt": "About me",
-  "abtText": "I am a Junior Fullstack Developer focused on Java backend and React.js frontend, working on the development of complete web applications, from business logic to user interface. I work with the creation and consumption of REST APIs, frontend and backend integration, and data persistence in relational databases. I have practical experience with Java, React.js, SQL, and Python, using PostgreSQL and MySQL, as well as version control with Git. I work on fullstack application development, process automation, system integration, code maintenance, and bug fixing, following good organizational and development practices. I have experience implementing backend functionalities, building interfaces in React.js, analyzing technical requirements, basic testing, and process documentation. I have a solid foundation in web development with HTML, CSS, and JavaScript, focusing on high-performance and well-structured applications. I am seeking opportunities as a Junior Fullstack Developer, working with Java, React.js, REST APIs, and SQL databases, where I can grow technically and contribute consistently to real-world projects."
+  "nav": {
+    "home": "HOME",
+    "about": "ABOUT",
+    "projects": "PROJECTS",
+    "contact": "CONTACT",
+    "menu_open": "OPEN MENU",
+    "system_status": "SYSTEM ONLINE"
+  },
+  "home": {
+    "driver_number": "15",
+    "driver_unit": "DRIVER UNIT",
+    "hometown_label": "HOMETOWN",
+    "hometown_value": "FORTALEZA, CE // BR",
+    "telemetry_status": "TELEMETRY STATUS: OPTIMAL",
+    "first_name": "NATHANAEL",
+    "last_name": "SECUNDO",
+    "role_description": "Systems Analyst focused on high-performance engineering and operational flow automation.",
+    "start_engine": "START ENGINE",
+    "cranking": "IGNITION ACTIVE...",
+    "stats_label": "LIVE STATS",
+    "stat_semester": "CURRENT SEMESTER",
+    "stat_semester_sub": "COMPUTER SCIENCE",
+    "stat_reduction": "TIME REDUCTION",
+    "stat_reduction_sub": "OPERATIONAL OPTIMIZATION",
+    "stat_economy": "DIRECT SAVINGS",
+    "stat_economy_sub": "ESTIMATED ANNUAL SAVINGS",
+    "stat_prod": "PRODUCTIVITY",
+    "stat_prod_sub": "PYTHON AUTOMATION"
+  },
+  "about": {
+    "title": "NATHANAEL SECUNDO",
+    "subtitle": "DRIVER PROFILE",
+    "description": "I am a Junior Fullstack Developer focusing on Java for the backend and React.js for the frontend, working on the development of complete web applications, from business logic to the user interface. I work with the creation and consumption of REST APIs, frontend and backend integration, and data persistence in relational databases.",
+    "experience_title": "PROFESSIONAL TRACK",
+    "education_title": "EDUCATION PIT",
+    "skills_title": "TECH TELEMETRY",
+    "cert_title": "PERFORMANCE UPGRADES // CERTIFICATIONS"
+  },
+  "projects": {
+    "title": "ENGINEERING ARCHIVE",
+    "subtitle": "TRACK RECORD // PROJECTS",
+    "filter_label": "FILTER BY TECH",
+    "view_details": "VIEW DETAILS",
+    "code_link": "REPOSITORY",
+    "live_link": "LIVE SYSTEM",
+    "no_results": "NO MATCHES FOUND IN DATABASE"
+  },
+  "contact": {
+    "title": "ESTABLISH CONNECTION",
+    "subtitle": "COMMUNICATION CHANNEL // COMMS",
+    "info_card": "Ready to join your team and elevate the performance of your systems.",
+    "social_label": "SOCIAL TELEMETRY",
+    "form_title": "DIRECT MESSAGE",
+    "form_name": "PILOT NAME",
+    "form_name_placeholder": "IDENTIFY YOURSELF",
+    "form_email": "COMMUNICATION CHANNEL",
+    "form_email_placeholder": "YOUR EMAIL",
+    "form_subject": "SUBJECT",
+    "form_subject_placeholder": "BRIEFING TOPIC",
+    "form_message": "MESSAGE DATA",
+    "form_message_placeholder": "TRANSMIT YOUR MESSAGE...",
+    "form_submit": "TRANSMIT DATA // SEND",
+    "success": "SENT SUCCESSFULLY",
+    "error": "TRANSMISSION ERROR"
+  }
 }

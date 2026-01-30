@@ -2,12 +2,14 @@ import { useState, useEffect } from "react";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { Menu, X, Gauge, Activity } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useLang } from "../context/LangContext";
 
 type Props = {
   setSection: (value: "home" | "about" | "projects" | "contact") => void;
 };
 
 export default function Navbar({ setSection }: Props) {
+  const { t } = useLang();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -42,7 +44,7 @@ export default function Navbar({ setSection }: Props) {
            </div>
            <div className="hidden lg:flex items-center gap-2 opacity-40">
               <Activity size={12} className="text-[#FF001D]" />
-              <span className="font-['Orbitron'] text-[8px] text-white tracking-widest uppercase">System Online</span>
+              <span className="font-['Orbitron'] text-[8px] text-white tracking-widest uppercase">{t.nav.system_status}</span>
            </div>
         </div>
 
@@ -50,7 +52,7 @@ export default function Navbar({ setSection }: Props) {
           className="group flex items-center gap-4 font-['Orbitron'] font-black text-xs md:text-sm text-white tracking-[0.4em] transition-all"
           onClick={() => setOpen(true)}
         >
-          <span className="hidden md:block group-hover:text-[#FF001D] transition-colors">OPEN MENU</span>
+          <span className="hidden md:block group-hover:text-[#FF001D] transition-colors">{t.nav.menu_open}</span>
           <div className="relative flex items-center justify-center">
             <Menu className="w-8 h-8 text-white group-hover:text-[#FF001D] transition-colors" strokeWidth={1.5} />
             <motion.div 
@@ -98,10 +100,10 @@ export default function Navbar({ setSection }: Props) {
               </div>
 
               <div className="flex flex-col justify-center flex-grow px-12 gap-2">
-                <NavButton number="01" label="HOME" onClick={() => handleNavigation("home")} />
-                <NavButton number="02" label="SOBRE" onClick={() => handleNavigation("about")} />
-                <NavButton number="03" label="PROJETOS" onClick={() => handleNavigation("projects")} />
-                <NavButton number="04" label="CONTATO" onClick={() => handleNavigation("contact")} />
+                <NavButton number="01" label={t.nav.home} onClick={() => handleNavigation("home")} />
+                <NavButton number="02" label={t.nav.about} onClick={() => handleNavigation("about")} />
+                <NavButton number="03" label={t.nav.projects} onClick={() => handleNavigation("projects")} />
+                <NavButton number="04" label={t.nav.contact} onClick={() => handleNavigation("contact")} />
               </div>
 
               <div className="p-10 flex justify-between items-end border-t border-white/5 bg-white/[0.02]">

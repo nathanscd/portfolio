@@ -1,6 +1,67 @@
 {
-  "title": "Desenvolvedor | Designer | Analista de Dados",
-  "description": "Focado em performance, design e qualidade.",
-  "abt": "Sobre mim",
-  "abtText": "Sou Desenvolvedor Fullstack Júnior com foco em Java no backend e React.js no frontend, atuando no desenvolvimento de aplicações web completas, desde a lógica de negócio até a interface do usuário. Trabalho com criação e consumo de APIs REST, integração entre frontend e backend e persistência de dados em bancos relacionais. Tenho experiência prática com Java, React.js, SQL e Python, utilizando PostgreSQL e MySQL, além de versionamento com Git. Atuo no desenvolvimento de aplicações fullstack, automação de processos, integração de sistemas, manutenção de código e correção de bugs, seguindo boas práticas de organização e desenvolvimento. Já trabalhei com implementação de funcionalidades backend, construção de interfaces em React.js, análise de requisitos técnicos, testes básicos e documentação de processos. Possuo base sólida em desenvolvimento web com HTML, CSS e JavaScript, com foco em aplicações performáticas e bem estruturadas. Busco oportunidades como Desenvolvedor Fullstack Júnior, atuando com Java, React.js, APIs REST e bancos de dados SQL, onde eu possa evoluir tecnicamente e contribuir de forma consistente em projetos reais."
+  "nav": {
+    "home": "INÍCIO",
+    "about": "SOBRE",
+    "projects": "PROJETOS",
+    "contact": "CONTATO",
+    "menu_open": "ABRIR MENU",
+    "system_status": "SISTEMA ONLINE"
+  },
+  "home": {
+    "driver_number": "15",
+    "driver_unit": "UNIDADE DE PILOTO",
+    "hometown_label": "CIDADE NATAL",
+    "hometown_value": "FORTALEZA, CE // BR",
+    "telemetry_status": "STATUS DA TELEMETRIA: OTIMIZADO",
+    "first_name": "NATHANAEL",
+    "last_name": "SECUNDO",
+    "role_description": "Analista de Sistemas focado em engenharia de alta performance e automação de fluxos operacionais.",
+    "start_engine": "INICIAR MOTOR",
+    "cranking": "IGNIÇÃO ATIVA...",
+    "stats_label": "ESTATÍSTICAS AO VIVO",
+    "stat_semester": "SEMESTRE ATUAL",
+    "stat_semester_sub": "CIÊNCIA DA COMPUTAÇÃO",
+    "stat_reduction": "REDUÇÃO DE TEMPO",
+    "stat_reduction_sub": "OTIMIZAÇÃO OPERACIONAL",
+    "stat_economy": "ECONOMIA DIRETA",
+    "stat_economy_sub": "POUPANÇA ANUAL ESTIMADA",
+    "stat_prod": "PRODUTIVIDADE",
+    "stat_prod_sub": "AUTOMAÇÃO VIA PYTHON"
+  },
+  "about": {
+    "title": "NATHANAEL SECUNDO",
+    "subtitle": "PERFIL DO PILOTO",
+    "description": "Sou Desenvolvedor Fullstack Júnior com foco em Java no backend e React.js no frontend, atuando no desenvolvimento de aplicações web completas, desde a lógica de negócio até a interface do usuário. Trabalho com criação e consumo de APIs REST, integração entre frontend e backend e persistência de dados em bancos relacionais.",
+    "experience_title": "TRAJETÓRIA PROFISSIONAL",
+    "education_title": "BOX DE EDUCAÇÃO",
+    "skills_title": "TELEMETRIA TECNOLÓGICA",
+    "cert_title": "UPGRADES DE PERFORMANCE // CERTIFICAÇÕES"
+  },
+  "projects": {
+    "title": "ARQUIVO DE ENGENHARIA",
+    "subtitle": "REGISTRO DE CORRIDAS // PROJETOS",
+    "filter_label": "FILTRAR POR TECNOLOGIA",
+    "view_details": "VER DETALHES",
+    "code_link": "REPOSITÓRIO",
+    "live_link": "SISTEMA ATIVO",
+    "no_results": "NENHUM RESULTADO ENCONTRADO NO BANCO DE DADOS"
+  },
+  "contact": {
+    "title": "ESTABELECER CONEXÃO",
+    "subtitle": "CANAL DE COMUNICAÇÃO // COMMS",
+    "info_card": "Pronto para integrar sua equipe e elevar a performance dos seus sistemas.",
+    "social_label": "TELEMETRIA SOCIAL",
+    "form_title": "MENSAGEM DIRETA",
+    "form_name": "NOME DO PILOTO",
+    "form_name_placeholder": "IDENTIFIQUE-SE",
+    "form_email": "CANAL DE COMUNICAÇÃO",
+    "form_email_placeholder": "SEU EMAIL",
+    "form_subject": "ASSUNTO",
+    "form_subject_placeholder": "TÓPICO DO BRIEFING",
+    "form_message": "DADOS DA MENSAGEM",
+    "form_message_placeholder": "TRANSMITA SUA MENSAGEM...",
+    "form_submit": "TRANSMITIR DADOS // ENVIAR",
+    "success": "ENVIADO COM SUCESSO",
+    "error": "ERRO NA TRANSMISSÃO"
+  }
 }

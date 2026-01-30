@@ -2,8 +2,10 @@ import { motion, Variants } from "framer-motion";
 import { Mail, Github, Linkedin, Instagram, MapPin, Phone, Send, Zap, Activity, Loader2 } from "lucide-react";
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import { useLang } from "../context/LangContext";
 
 export default function Contact() {
+  const { t } = useLang();
   const formRef = useRef<HTMLFormElement>(null);
   const [isSending, setIsSending] = useState(false);
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
@@ -54,13 +56,13 @@ export default function Contact() {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={slashIn} custom={0} className="flex items-center gap-3 mb-6">
             <div className="flex items-center gap-2 px-3 py-1 bg-[#FF001D] text-white">
                <Activity size={14} className="animate-pulse" />
-               <span className="font-['Orbitron'] font-black text-[10px] tracking-[0.3em] uppercase">Comms Channel</span>
+               <span className="font-['Orbitron'] font-black text-[10px] tracking-[0.3em] uppercase">{t.contact.subtitle.split(' // ')[1]}</span>
             </div>
           </motion.div>
           
           <motion.h2 initial="hidden" whileInView="visible" viewport={{ once: true }} variants={slashIn} custom={1} className="font-['Orbitron'] text-5xl md:text-[7.5rem] font-black italic uppercase leading-[0.85] tracking-tighter text-[#111]">
-            ESTABLISH<br/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#111] via-[#444] to-[#FF001D]">CONNECTION</span>
+            {t.contact.title.split(' ')[0]}<br/>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#111] via-[#444] to-[#FF001D]">{t.contact.title.split(' ')[1]}</span>
           </motion.h2>
         </div>
 
@@ -70,18 +72,18 @@ export default function Contact() {
               <Zap size={140} className="absolute -bottom-10 -right-10 text-white/5 rotate-12" />
               <div className="relative z-10 space-y-10">
                 <p className="font-['Manrope'] text-xl md:text-2xl font-light italic leading-relaxed">
-                  "Pronto para integrar sua equipe e elevar a <span className="text-[#FF001D] font-bold">performance</span> dos seus sistemas."
+                  "{t.contact.info_card}"
                 </p>
                 <div className="space-y-6">
                   <ContactInfo icon={<Mail size={20}/>} label="Email" value="nathansscd@gmail.com" />
                   <ContactInfo icon={<Phone size={20}/>} label="Phone" value="(85) 98168-3486" />
-                  <ContactInfo icon={<MapPin size={20}/>} label="Base" value="Fortaleza, CE // BR" />
+                  <ContactInfo icon={<MapPin size={20}/>} label="Base" value={t.home.hometown_value} />
                 </div>
               </div>
             </motion.div>
 
             <div className="flex flex-col gap-6">
-               <h4 className="font-['Orbitron'] text-[11px] font-black uppercase tracking-[0.4em] text-gray-300">Social Telemetry</h4>
+               <h4 className="font-['Orbitron'] text-[11px] font-black uppercase tracking-[0.4em] text-gray-300">{t.contact.social_label}</h4>
                <div className="flex gap-4">
                   <SocialIcon icon={<Github size={22}/>} link="https://github.com/nathanscd" />
                   <SocialIcon icon={<Linkedin size={22}/>} link="https://www.linkedin.com/in/nathanscd/" />
@@ -95,21 +97,21 @@ export default function Contact() {
               <div className="flex justify-between items-center mb-12">
                 <div className="flex items-center gap-4">
                   <span className="w-12 h-1 bg-[#FF001D]"></span>
-                  <h3 className="font-['Orbitron'] text-2xl font-black italic uppercase tracking-tighter">Direct Message</h3>
+                  <h3 className="font-['Orbitron'] text-2xl font-black italic uppercase tracking-tighter">{t.contact.form_title}</h3>
                 </div>
-                {status === "success" && <span className="text-green-600 font-['Orbitron'] text-[10px] font-bold animate-pulse uppercase tracking-widest">Sent Successfully</span>}
-                {status === "error" && <span className="text-[#FF001D] font-['Orbitron'] text-[10px] font-bold uppercase tracking-widest">Transmission Error</span>}
+                {status === "success" && <span className="text-green-600 font-['Orbitron'] text-[10px] font-bold animate-pulse uppercase tracking-widest">{t.contact.success}</span>}
+                {status === "error" && <span className="text-[#FF001D] font-['Orbitron'] text-[10px] font-bold uppercase tracking-widest">{t.contact.error}</span>}
               </div>
 
               <form ref={formRef} className="space-y-8" onSubmit={sendEmail}>
                 <div className="grid md:grid-cols-2 gap-8">
-                  <FormGroup label="Pilot Name" name="user_name" placeholder="IDENTIFY YOURSELF" required />
-                  <FormGroup label="Communication Channel" name="user_email" type="email" placeholder="YOUR EMAIL" required />
+                  <FormGroup label={t.contact.form_name} name="user_name" placeholder={t.contact.form_name_placeholder} required />
+                  <FormGroup label={t.contact.form_email} name="user_email" type="email" placeholder={t.contact.form_email_placeholder} required />
                 </div>
-                <FormGroup label="Subject" name="subject" placeholder="BRIEFING TOPIC" required />
+                <FormGroup label={t.contact.form_subject} name="subject" placeholder={t.contact.form_subject_placeholder} required />
                 <div className="space-y-2">
-                  <label className="font-['Orbitron'] text-[10px] font-black uppercase tracking-widest text-gray-400">Message Data</label>
-                  <textarea name="message" rows={4} className="w-full bg-[#f9f9f9] border-b-2 border-gray-100 p-4 font-['Manrope'] font-bold focus:border-[#FF001D] outline-none transition-all resize-none text-[#111]" placeholder="TRANSMIT YOUR MESSAGE..." required />
+                  <label className="font-['Orbitron'] text-[10px] font-black uppercase tracking-widest text-gray-400">{t.contact.form_message}</label>
+                  <textarea name="message" rows={4} className="w-full bg-[#f9f9f9] border-b-2 border-gray-100 p-4 font-['Manrope'] font-bold focus:border-[#FF001D] outline-none transition-all resize-none text-[#111]" placeholder={t.contact.form_message_placeholder} required />
                 </div>
 
                 <button 
@@ -118,7 +120,7 @@ export default function Contact() {
                   className="group w-full relative h-16 bg-[#FF001D] overflow-hidden transition-all hover:bg-[#111] disabled:bg-gray-400"
                 >
                   <div className="relative z-10 flex items-center justify-center gap-3 font-['Orbitron'] font-black italic text-white uppercase tracking-[0.2em]">
-                    {isSending ? <Loader2 size={18} className="animate-spin" /> : "Transmit Data"}
+                    {isSending ? <Loader2 size={18} className="animate-spin" /> : t.contact.form_submit.split(' // ')[0]}
                     {!isSending && <Send size={18} className="group-hover:translate-x-2 transition-transform" />}
                   </div>
                   <div className="absolute inset-0 bg-white/10 -skew-x-12 translate-x-full group-hover:translate-x-[-100%] transition-transform duration-700" />
