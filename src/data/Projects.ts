@@ -68,6 +68,8 @@ export const projects: Project[] = [
       { type: "image", src: "/Projetos/RPGMaster01.png" },
       { type: "image", src: "/Projetos/RPGMaster02.png" },
       { type: "image", src: "/Projetos/RPGMaster03.png" },
+      { type: "image", src: "/Projetos/RPGMaster04.png" },
+      { type: "image", src: "/Projetos/RPGMaster05.png" },
       { type: "video", src: "/Projetos/RPGMaster - Google Chrome 2026-01-20 15-58-10.mp4" }
     ],
     "github": "https://github.com/nathanscd/RPGMaster",
