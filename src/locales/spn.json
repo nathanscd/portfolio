@@ -9,7 +9,7 @@
   },
   "home": {
     "driver_number": "15",
-    "driver_unit": "UNIDAD DE PILOTO",
+    "driver_unit": "NÚMERO DE PILOTO",
     "hometown_label": "CIUDAD NATAL",
     "hometown_value": "FORTALEZA, CE // BR",
     "telemetry_status": "ESTADO DE TELEMETRÍA: ÓPTIMO",
