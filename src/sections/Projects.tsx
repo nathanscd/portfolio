@@ -252,7 +252,7 @@ export default function Projects() {
             onClick={() => setIsModalOpen(false)}
           >
             {/* NOISE EFFECT OVERLAY */}
-            <div className="absolute inset-0 opacity-[0.08] pointer-events-none mix-blend-screen bg-[url('https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcXJ0dmxnZTM3MmFoMmU3bzFsdXZ5bHRxMjg0bzUxaGgyZWQwZmR5NyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/2iypzGlDDHTfa/giphy.gif')]" />
+            <div className="absolute inset-0 opacity-[0.5] pointer-events-none bg-[url('https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcXJ0dmxnZTM3MmFoMmU3bzFsdXZ5bHRxMjg0bzUxaGgyZWQwZmR5NyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/2iypzGlDDHTfa/giphy.gif')] bg-no-repeat bg-center bg-cover" />
             
             <motion.button 
               whileHover={{ scale: 1.1, backgroundColor: "#FF001D" }}
