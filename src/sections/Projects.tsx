@@ -50,7 +50,7 @@ export default function Projects() {
   };
 
   return (
-    <section id="projects" className="w-full min-h-screen bg-[#050505] text-white py-32 px-6 md:px-12 relative overflow-hidden flex flex-col justify-center">
+    <section id="projects" className="w-full min-h-screen bg-red-900 text-white py-32 px-6 md:px-12 relative overflow-hidden flex flex-col justify-center">
       
       <div className="absolute inset-0 opacity-[0.05] pointer-events-none z-0" 
            style={{ backgroundImage: 'linear-gradient(#FF001D 1px, transparent 1px), linear-gradient(90deg, #FF001D 1px, transparent 1px)', backgroundSize: '100px 100px' }} />
