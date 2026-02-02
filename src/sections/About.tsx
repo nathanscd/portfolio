@@ -50,7 +50,7 @@ export default function About() {
             className="font-['Orbitron'] text-5xl md:text-[7.5rem] font-black italic uppercase leading-[0.9] tracking-tighter px-2"
           >
             NATHANAEL<br/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#111111] via-[#333] to-[#FF001D]">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#111111] via-[#333] to-[#FF001D] pr-5">
               SECUNDO
             </span>
           </motion.h2>

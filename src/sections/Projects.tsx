@@ -66,8 +66,7 @@ export default function Projects() {
               </span>
             </div>
             <h2 className="font-['Orbitron'] text-6xl md:text-[7rem] font-black italic uppercase leading-[0.8] tracking-tighter">
-              {t.projects.title.split(' ')[0]}<br/>
-              <span className="text-white/10">{t.projects.title.split(' ')[1]}</span>
+              {t.projects.title}<br/>
             </h2>
           </div>
           <div className="hidden lg:block text-right font-['Orbitron'] text-[10px] text-[#FF001D] tracking-widest leading-relaxed uppercase font-black">
@@ -139,7 +138,6 @@ export default function Projects() {
                                 onVolumeChange={handleVolumeChange}
                                 className="w-full h-full object-cover opacity-80"
                               />
-                              {/* F1 STYLE VIDEO CONTROLS */}
                               <div className="absolute bottom-4 left-0 right-0 px-6 z-40 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity">
                                 <button onClick={togglePlay} className="p-2 bg-[#FF001D] text-white rounded-none skew-x-[-12deg] hover:bg-white hover:text-black transition-colors">
                                   <div className="skew-x-[12deg]">{isPlaying ? <Pause size={14} /> : <Play size={14} />}</div>

@@ -62,7 +62,7 @@ export default function Contact() {
           
           <motion.h2 initial="hidden" whileInView="visible" viewport={{ once: true }} variants={slashIn} custom={1} className="font-['Orbitron'] text-5xl md:text-[7.5rem] font-black italic uppercase leading-[0.85] tracking-tighter text-[#111]">
             {t.contact.title.split(' ')[0]}<br/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#111] via-[#444] to-[#FF001D]">{t.contact.title.split(' ')[1]}</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#111] via-[#444] to-[#FF001D] pr-5">{t.contact.title.split(' ')[1]}</span>
           </motion.h2>
         </div>
 

@@ -48,7 +48,7 @@ export default function Home({ setSection }: { setSection: (val: any) => void })
               <span className="font-['Orbitron'] text-[#111] font-black tracking-[0.4em] uppercase text-[10px]">{t.home.telemetry_status}</span>
             </div>
             <h1 className="font-['Orbitron'] text-6xl md:text-[8.5rem] font-black italic uppercase leading-[0.75] tracking-tighter text-[#111]">{t.home.first_name}</h1>
-            <h1 className="font-['Orbitron'] text-6xl md:text-[8.5rem] font-black italic uppercase leading-[0.75] tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-[#111] to-[#FF001D]">{t.home.last_name}</h1>
+            <h1 className="font-['Orbitron'] text-6xl md:text-[8.5rem] font-black italic uppercase leading-[0.75] tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-[#111] to-[#FF001D] pr-5">{t.home.last_name}</h1>
             <p className="mt-10 font-['Manrope'] text-[#555] text-xl font-semibold max-w-lg leading-relaxed border-l-2 border-gray-100 pl-6">{t.home.role_description}</p>
           </div>
 
