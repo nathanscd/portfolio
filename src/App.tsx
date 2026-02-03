@@ -9,6 +9,7 @@ import SpeedLoader from "./components/SpeedLoader";
 import { AnimatePresence, motion } from "framer-motion";
 import CustomCursor from "./components/CustomCursor";
 import GrainEffect from "./components/GrainEffect";
+import RadioF1 from "./components/RadioF1";
 import Lenis from "@studio-freight/lenis";
 
 type Section = "home" | "about" | "projects" | "contact";
@@ -78,6 +79,8 @@ export default function App() {
                   )}
                 </AnimatePresence>
               </main>
+
+              <RadioF1 />
 
               <footer className="py-12 bg-white border-t border-gray-100 flex flex-col items-center gap-4">
                 <div className="w-8 h-[2px] bg-[#FF001D]" />
