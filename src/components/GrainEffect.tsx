@@ -1,6 +1,6 @@
 export default function GrainEffect() {
   return (
-    <div className="fixed inset-0 pointer-events-none z-[9990] overflow-hidden opacity-[0.020]">
+    <div className="fixed inset-0 pointer-events-none z-[9990] overflow-hidden opacity-45 mix-blend-multiply">
       <div className="absolute inset-[-200%] bg-[url('https://img.freepik.com/fotos-gratis/textura-de-papelao_1194-5419.jpg?semt=ais_hybrid&w=740&q=80')] animate-grain" />
       <style>{`
         @keyframes grain {

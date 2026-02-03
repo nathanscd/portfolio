@@ -1,16 +1,18 @@
 export type Project = {
-  id: number;
+id: number;
   title: string;
-  image: string;
-  tech: string[];
   description: string;
+  image: string; // Imagem de capa
+  tech: string[];
   date: string;
-  media: {
-    type: "image" | "video";
-    src: string;
-  }[];
+  github: string;
   link?: string;
-  github?: string;
+  media?: ProjectMedia[];
+};
+
+export type ProjectMedia = {
+  type: "image" | "video";
+  src: string;
 };
 
 

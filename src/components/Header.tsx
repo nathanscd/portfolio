@@ -178,14 +178,13 @@ function MenuLink({ title, number, onClick, setHovered }: { title: string, numbe
                     {number}
                 </span>
                 
-                {/* Altura ajustada para 'auto' para evitar corte, com min-h para garantir tamanho */}
                 <div className="relative h-20 md:h-32 lg:h-[7rem] overflow-hidden w-full">
                     <div className="flex flex-col transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:-translate-y-1/2">
                         <span className="block font-['Orbitron'] text-5xl md:text-8xl lg:text-[7rem] font-black italic uppercase text-white leading-[1.1] tracking-tighter h-20 md:h-32 lg:h-[7rem] flex items-center">
                             {title}
                         </span>
-                        <span className="block font-['Orbitron'] text-5xl md:text-8xl lg:text-[7rem] font-black italic uppercase text-[#FF001D] leading-[1.1] tracking-tighter h-20 md:h-32 lg:h-[7rem] flex items-center skew-x-12 origin-bottom group-hover:skew-x-0 transition-transform duration-500">
-                            {title}
+                        <span className="block font-['Orbitron'] text-5xl md:text-8xl lg:text-[7rem] font-black italic uppercase text-[#FF001D] leading-[1.1] tracking-tighter h-20 md:h-32 lg:h-[7rem] flex items-center opacity-0 group-hover:opacity-100 skew-x-12 group-hover:skew-x-0 origin-bottom transition-all duration-500 ease-out">
+                          {title}
                         </span>
                     </div>
                 </div>
