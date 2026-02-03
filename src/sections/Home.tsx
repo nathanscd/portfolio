@@ -156,11 +156,27 @@ function ChampionshipsSection() {
                 <div className="flex items-end justify-between mb-24 relative z-10">
                     <div>
                         <div className="flex items-center gap-2 mb-2">
-                             <Trophy size={18} className="text-[#FF001D]" />
-                             <span className="font-['Orbitron'] text-[#FF001D] text-[10px] font-black uppercase tracking-[0.3em]">Hall of Fame</span>
+                            <Trophy size={18} className="text-[#FF001D]" />
+                            <span className="font-['Orbitron'] text-[#FF001D] text-[10px] font-black uppercase tracking-[0.3em]">
+                                Hall of Fame
+                            </span>
                         </div>
-                        <h2 className="font-['Orbitron'] text-5xl md:text-7xl font-black italic uppercase text-white leading-none">
-                            Grand Prix <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF001D] to-red-900">Wins</span>
+                        
+                        <h2 className="font-['Orbitron'] text-5xl md:text-7xl font-black italic uppercase text-white leading-none relative overflow-hidden">
+                            Grand Prix{" "}
+                            <motion.span 
+                                initial={{ x: "-100%", opacity: 0 }}
+                                whileInView={{ x: 0, opacity: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ 
+                                    duration: 1.2, 
+                                    ease: [0.22, 1, 0.36, 1],
+                                    delay: 0.80 
+                                }}
+                                className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#FF001D] to-red-900"
+                            >
+                                Wins
+                            </motion.span>
                         </h2>
                     </div>
                 </div>
