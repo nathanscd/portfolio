@@ -120,6 +120,47 @@ export const projects: Project[] = [
       { type: "video", src: "/Projetos/CadastroPessoas/Online C Compiler - online editor - Google Chrome 2026-01-20 16-57-08.mp4" }
     ],
     "github": "https://github.com/nathanscd/cadastroprodutos",
+  },
+  {
+    id: 6,
+    title: "Sorriso Ideal",
+    image:"/Projetos/SorrisoIdeal/Cover.png",
+    tech: ["HTML", "CSS", "JavaScript", "React", "TypeScript", "UI/UX Design"],
+    "description": "O Sorriso Ideal é uma plataforma web completa desenvolvida para otimizar a gestão de clínicas odontológicas, com foco em agendamentos, cadastro de pacientes e gestão de finanças. O projeto foi construído com uma arquitetura moderna baseada em React, oferecendo uma interface de usuário (UI) rica e responsiva, desenvolvida com CSS puro para garantir máxima performance e flexibilidade visual. A aplicação integra funcionalidades essenciais como um calendário interativo para marcação de consultas, painéis administrativos para visualização de métricas financeiras e relatórios de faturamento, além de um sistema robusto de autenticação de usuários. Tecnicamente, o projeto demonstra proficiência no uso de componentes funcionais do React, manipulação de estado assíncrono e implementação de rotas privadas para diferentes perfis de acesso (admin e paciente). A interface foi cuidadosamente projetada seguindo princípios de experiência do usuário (UX), com foco em navegação intuitiva, carregamento rápido de dados e design limpo e profissional. Como projeto full-stack em ascensão, o Sorriso Ideal serve como base para a integração futura de módulos de inteligência artificial para análise preditiva de demanda e otimização de agendamentos.",
+    date: "2025",
+    media: [
+      { type: "image", src: "/Projetos/SorrisoIdeal/1.png" },
+      { type: "image", src: "/Projetos/SorrisoIdeal/2.png" },
+      { type: "image", src: "/Projetos/SorrisoIdeal/3.png" },
+      { type: "image", src: "/Projetos/SorrisoIdeal/4.png" },
+      { type: "image", src: "/Projetos/SorrisoIdeal/5.png" },
+      { type: "image", src: "/Projetos/SorrisoIdeal/6.png" },
+      { type: "image", src: "/Projetos/SorrisoIdeal/7.png" },
+      { type: "image", src: "/Projetos/SorrisoIdeal/8.png" },
+    ],
+    "github": "https://github.com/nathanscd/SorrisoIdeal",
+    "link": "https://sorrisoidealfortaleza.vercel.app/"
+  },
+  
+  {
+    id: 7,
+    title: "Velaris Studio",
+    image:"/Projetos/VelarisStudio/1.png",
+    tech: ["HTML", "CSS", "JavaScript", "React", "TypeScript", "UI/UX Design"],
+    "description": "O Velaris Studio é uma plataforma web completa desenvolvida para otimizar a gestão de estéticas automotivas, com foco em agendamentos, cadastro de clientes e gestão de serviços. O projeto foi construído com uma arquitetura moderna baseada em React, oferecendo uma interface de usuário (UI) rica e responsiva, desenvolvida com CSS puro para garantir máxima performance e flexibilidade visual. A aplicação integra funcionalidades essenciais como um calendário interativo para marcação de serviços, painéis administrativos para visualização de métricas financeiras e relatórios de faturamento, além de um sistema robusto de autenticação de usuários. Tecnicamente, o projeto demonstra proficiência no uso de componentes funcionais do React, manipulação de estado assíncrono e implementação de rotas privadas para diferentes perfis de acesso (admin e cliente). A interface foi cuidadosamente projetada seguindo princípios de experiência do usuário (UX), com foco em navegação intuitiva, carregamento rápido de dados e design limpo e profissional. Como projeto full-stack em ascensão, o Velaris Studio serve como base para a integração futura de módulos de inteligência artificial para análise preditiva de demanda e otimização de agendamentos.",
+    date: "2025",
+    media: [
+      { type: "image", src: "/Projetos/VelarisStudio/1.png" },
+      { type: "image", src: "/Projetos/VelarisStudio/2.png" },
+      { type: "image", src: "/Projetos/VelarisStudio/3.png" },
+      { type: "image", src: "/Projetos/VelarisStudio/4.png" },
+      { type: "image", src: "/Projetos/VelarisStudio/5.png" },
+      { type: "image", src: "/Projetos/VelarisStudio/6.png" },
+      { type: "image", src: "/Projetos/VelarisStudio/7.png" },
+      { type: "image", src: "/Projetos/VelarisStudio/8.png" },
+    ],
+    "github": "https://github.com/nathanscd/VelarisStudio",
+    "link": "https://velaris-studio.vercel.app"
   }
 ];
 
